@@ -1,0 +1,5209 @@
+Product Requirement Document (PRD)
+Diamond House Cleaning Company - Full-Scale Web Platform
+Version: 1.0
+Date: November 28, 2025
+Technology Stack: MERN (MongoDB, Express.js, React.js, Node.js)
+Prepared By: Product Development Team
+
+1. Project Overview
+1.1 Purpose of the Website
+Diamond House Cleaning Company requires a comprehensive digital platform to streamline its cleaning service operations, enable online bookings, manage customer relationships, and provide a seamless user experience for residential and commercial cleaning services. The platform will serve as the primary digital touchpoint for customer acquisition, service delivery coordination, and business operations management.
+1.2 Goals for Diamond House Cleaning Company
+
+Digital Transformation: Transition from traditional booking methods to a fully automated online system
+Revenue Growth: Increase bookings by 40% through improved accessibility and user experience
+Operational Efficiency: Reduce manual administrative work by 60% through automation
+Customer Satisfaction: Achieve 4.5+ star average rating through transparent service delivery
+Market Expansion: Expand service coverage to new geographic areas with data-driven insights
+Brand Recognition: Establish Diamond House Cleaning as a premium, tech-forward cleaning service provider
+Customer Retention: Implement loyalty programs and subscription models to increase repeat bookings by 50%
+
+1.3 Target Users
+Primary User Segments:
+
+Homeowners (Individual Customers)
+
+Age: 25-55 years
+Income: Middle to upper-middle class
+Pain Points: Lack of time, need for reliable cleaning services
+Tech Savviness: Moderate to high
+
+
+Office Managers/Corporate Clients
+
+Decision makers for workplace facilities
+Require regular, scheduled cleaning services
+Need invoicing and bulk booking capabilities
+
+
+Property Management Agencies
+
+Manage multiple properties
+Require coordinated cleaning schedules
+Need reporting and compliance documentation
+
+
+Regular Customers
+
+Existing loyal customer base
+Need easy rebooking and subscription options
+Value personalized service history
+
+
+New Customers
+
+First-time users exploring cleaning services
+Need clear pricing, service information
+Require trust signals (reviews, guarantees)
+
+
+
+Secondary Users:
+
+Admin Staff: Full platform management and oversight
+Cleaning Staff: Task assignment and schedule management
+Customer Support Team: Enquiry and issue resolution
+
+1.4 Value Proposition
+Diamond House Cleaning Company's platform delivers:
+
+Instant Booking: Book professional cleaning services in under 3 minutes
+Transparent Pricing: Clear, upfront costs with no hidden charges
+Quality Guarantee: 100% satisfaction guarantee with trained, verified professionals
+Flexible Scheduling: Same-day, next-day, or scheduled bookings
+Secure Payments: Multiple payment options with encrypted transactions
+Real-Time Tracking: Live updates on booking status and staff assignment
+Eco-Friendly Options: Green cleaning products available
+Customizable Services: Tailor cleaning packages to specific needs
+
+1.5 Competitive Advantage
+
+Technology-First Approach: Modern, intuitive platform superior to competitors' outdated websites
+Comprehensive Service Range: One-stop solution for all cleaning needs (residential, commercial, specialized)
+Dynamic Pricing Engine: Smart pricing based on service type, area, and demand
+Verified Professional Staff: Background-checked, trained, and rated cleaners
+Instant Confirmation: Automated booking confirmation within seconds
+Integrated Customer Management: Complete service history, preferences, and personalized recommendations
+Local Expertise: Deep understanding of regional cleaning requirements and preferences
+24/7 Availability: Round-the-clock booking and support access
+
+
+2. Full Feature List (Frontend + Backend)
+2.1 Frontend Features (React.js)
+A. Core Pages & Components
+1. Hero Section (Home Page)
+
+Full-screen hero banner with high-quality imagery
+Animated headline with value proposition
+Quick booking CTA with service category selector
+Trust badges (years in business, customers served, rating)
+Floating action button for instant booking
+Promotional banner for current offers
+Auto-rotating testimonials
+Service area coverage map preview
+
+2. Navigation & Header
+
+Sticky navigation with smooth scroll
+Mega menu for service categories
+Search functionality for services
+User account dropdown (logged in state)
+Shopping cart icon for multi-service booking
+Language selector (English/Hindi/Regional)
+Mobile hamburger menu with slide-in drawer
+Contact information (phone, email)
+
+3. Service Categories Section
+
+Card-based layout with hover effects
+8-12 service categories:
+
+Regular House Cleaning
+Deep Cleaning
+Office/Commercial Cleaning
+Carpet & Upholstery Cleaning
+Sofa & Furniture Cleaning
+Kitchen Deep Cleaning
+Bathroom Deep Cleaning
+Post-Construction Cleaning
+Move-In/Move-Out Cleaning
+Window Cleaning
+Disinfection Services
+Specialized Services (Mattress, Curtains, etc.)
+
+
+Icon-based visual representation
+Quick view pricing range
+"Book Now" CTA on each card
+Popular service badge
+
+4. Service Detail Pages
+
+Comprehensive service description
+What's included/excluded checklist
+Pricing calculator (area-based)
+Duration estimate
+Before/after image gallery
+Service process timeline (4-6 steps)
+FAQ specific to service
+Related services suggestion
+Customer reviews filtered by service
+"Add to Cart" or "Book Now" options
+Service customization options
+Additional add-ons selector
+
+5. About Company Page
+
+Company history and mission
+Core values section
+Team introduction with photos
+Certifications and awards
+Company statistics (animated counters)
+Video testimonial section
+Brand story narrative
+Environmental commitment
+Community involvement
+
+6. Pricing Page
+
+Service-wise pricing tables
+Package comparisons (Basic, Standard, Premium)
+Area-based pricing calculator
+Transparent pricing breakdown
+Seasonal offers section
+Volume discount information
+Subscription plan pricing
+Corporate package details
+Estimated savings calculator
+"Get Custom Quote" CTA
+
+7. Online Booking & Scheduling System
+
+Multi-step booking wizard (4-5 steps):
+
+Service selection
+Date & time selection
+Address & contact details
+Add-ons & customization
+Payment & confirmation
+
+
+Interactive calendar with availability
+Time slot selection (30-minute intervals)
+Recurring booking option
+Special instructions text area
+Service location autocomplete
+Area coverage validator
+Real-time price calculation
+Cart system for multiple services
+Promo code application field
+Guest checkout option
+Save booking as draft
+
+8. Google Maps Integration
+
+Service area coverage map
+Location-based service availability
+Distance-based pricing adjustment
+Interactive map on contact page
+Location search and autocomplete
+Office locations marker
+Service zone visualization
+"Check if we serve your area" tool
+
+9. Customer Testimonials
+
+Dynamic testimonial carousel
+Star rating display
+Customer name and location
+Service type badge
+Photo testimonials option
+Video testimonials
+Filter by service type
+"Write a Review" CTA
+Verified purchase badge
+Helpful/Not helpful voting
+
+10. Gallery Section
+
+Before/after image slider
+Filterable by service category
+Lightbox image viewer
+High-quality responsive images
+User-submitted photos (approved)
+Project completion showcases
+Lazy loading implementation
+Instagram feed integration
+
+11. Offers & Discounts Section
+
+Active offers carousel
+Countdown timer for limited offers
+Seasonal promotions
+Referral program details
+First-time user discount
+Bulk booking discounts
+Loyalty rewards information
+Coupon code display
+Terms & conditions expandable
+
+12. FAQ Section
+
+Accordion-style layout
+Search functionality
+Categorized questions:
+
+Booking & Scheduling
+Pricing & Payments
+Service Details
+Cancellation & Refund
+Safety & Trust
+
+
+"Still have questions?" CTA
+Related articles links
+
+13. Blog/Articles Section
+
+Blog listing page with grid layout
+Categories and tags
+Featured posts
+Search and filter options
+Individual blog post pages
+Author information
+Share on social media
+Related posts
+Comment section
+Subscribe to newsletter CTA
+SEO-optimized structure
+
+14. Contact Page
+
+Contact form with validation
+Multiple contact methods:
+
+Phone numbers
+Email addresses
+WhatsApp integration
+Office addresses
+
+
+Embedded Google Maps
+Business hours
+Social media links
+"Request a callback" option
+Live chat widget
+
+15. Enquiry Form
+
+Quick enquiry floating button
+Modal-based form
+Fields: Name, Email, Phone, Service Interest, Message
+Form validation
+CAPTCHA integration
+Auto-response confirmation
+Form submission tracking
+
+16. Payment Integration Page
+
+Secure payment gateway interface
+Multiple payment methods display
+Order summary
+Apply coupon at checkout
+Payment method selection
+Save card for future (optional)
+Payment processing loader
+Success/failure message
+Transaction ID display
+Download invoice option
+
+17. User Dashboard
+
+Personalized greeting
+Dashboard overview widgets:
+
+Upcoming bookings
+Booking history
+Total spent
+Loyalty points
+
+
+Quick actions menu
+Profile management
+Address book management
+Saved payment methods
+Booking history with filter/search
+Download invoices
+Reschedule/cancel bookings
+Review pending services
+Refer & earn section
+Notification preferences
+Support ticket system
+
+18. Admin Dashboard
+
+Comprehensive analytics overview:
+
+Revenue metrics
+Booking statistics
+Customer growth
+Service popularity
+
+
+Real-time booking feed
+Staff utilization charts
+Revenue graphs (daily, weekly, monthly)
+Top services report
+Customer segmentation
+Geographical heat map
+Alerts and notifications center
+Quick access modules
+Recent activities log
+
+19. Responsive Design Implementation
+
+Mobile-first approach
+Breakpoints: 320px, 768px, 1024px, 1440px
+Touch-friendly UI elements
+Optimized images for mobile
+Hamburger menu for mobile
+Swipeable carousels
+Bottom navigation for mobile app feel
+Accessible form inputs
+Readable typography across devices
+
+20. Dark Mode (Optional)
+
+Toggle switch in header
+System preference detection
+Smooth theme transition
+Optimized color palette for dark theme
+LocalStorage persistence
+Image optimization for dark backgrounds
+
+21. Notification System
+
+Toast notifications for actions
+Snackbar for confirmations
+In-app notification center
+Notification badges
+Push notification support (PWA)
+Email notification preferences
+SMS notification opt-in
+Real-time notification updates
+
+22. Appointment Calendar View
+
+Full calendar interface
+Month/week/day views
+Booking cards on calendar
+Color-coded status
+Filter by service/status
+Drag-and-drop reschedule (admin)
+Export calendar events
+Sync with Google Calendar option
+
+23. Modern Animations & Transitions
+
+Page transition animations
+Scroll-triggered animations
+Hover effects on interactive elements
+Loading skeletons
+Micro-interactions on buttons
+Parallax scrolling effects
+Smooth scroll behavior
+Progressive image loading
+Framer Motion or GSAP integration
+
+24. Additional Frontend Features
+
+Progressive Web App (PWA) capabilities
+Offline mode with service worker
+Lazy loading for images and components
+Code splitting for performance
+SEO meta tags for all pages
+Open Graph tags for social sharing
+Breadcrumb navigation
+Pagination for lists
+Infinite scroll where appropriate
+Skeleton loading screens
+Error boundary implementation
+404 page with navigation
+Maintenance mode page
+Cookie consent banner
+Accessibility features (ARIA labels, keyboard navigation)
+Multi-language support infrastructure
+Chatbot interface (for future integration)
+
+
+2.2 Backend Features (Node.js + Express.js)
+A. Authentication & Authorization
+1. User Authentication (JWT-based)
+
+User registration with email verification
+Login with email/password
+Social login integration (Google, Facebook)
+Phone number authentication (OTP)
+Password reset functionality
+Email verification for new accounts
+Remember me functionality
+Session management
+Token refresh mechanism
+Logout and logout from all devices
+Account deactivation
+
+2. Role-Based Access Control (RBAC)
+
+Three primary roles:
+
+Customer: Booking and profile management
+Staff: Task and schedule management
+Admin: Full system access
+
+
+Permission-based feature access
+Role assignment and modification
+Middleware for route protection
+Dynamic menu based on role
+
+3. Security Features
+
+JWT token generation and validation
+Bcrypt password hashing
+Rate limiting on API endpoints
+CORS configuration
+Helmet.js for security headers
+Input sanitization
+SQL injection prevention
+XSS protection
+CSRF token implementation
+Secure cookie handling
+Environment variable protection
+
+B. Core API Modules
+4. Service Management System
+
+Create/Update/Delete services
+Service categorization
+Pricing management
+Service availability control
+Service description and media
+Add-on services management
+Service duration configuration
+Area-based service availability
+Seasonal service offerings
+Service status (active/inactive)
+
+5. Booking Management System
+
+Create new bookings
+Booking status workflow:
+
+Pending → Confirmed → Assigned → In Progress → Completed → Reviewed
+
+
+Booking modification (reschedule)
+Booking cancellation with policy enforcement
+Multi-service booking support
+Recurring booking creation
+Booking conflict detection
+Staff assignment automation
+Booking notifications trigger
+Booking history retrieval
+Advanced booking filters
+Booking analytics
+No-show tracking
+Booking reminders (automated)
+
+6. Customer Management
+
+Customer profile CRUD
+Customer segmentation
+Customer service history
+Customer preferences storage
+Address book management
+Customer loyalty points calculation
+Customer communication logs
+Customer feedback collection
+Customer lifetime value calculation
+Inactive customer identification
+Customer export for CRM
+
+7. Staff Management
+
+Staff profile management
+Staff onboarding workflow
+Skill and certification tracking
+Staff availability calendar
+Staff assignment algorithm
+Performance metrics tracking
+Staff ratings and reviews
+Leave management
+Staff attendance tracking
+Staff payout calculation
+Staff location tracking (for future GPS)
+Staff training records
+
+8. Payment Processing
+
+Razorpay/Stripe integration
+Payment intent creation
+Payment verification
+Multiple payment method support:
+
+UPI (PhonePe, Google Pay, Paytm)
+Cards (Credit/Debit)
+Net Banking
+Wallets
+
+
+Payment status tracking
+Refund processing
+Partial refund support
+Payment receipt generation
+Failed payment retry mechanism
+Payment reconciliation
+Transaction history
+Payment analytics
+
+9. Coupon & Offers Management
+
+Create/Update/Delete coupons
+Coupon types:
+
+Percentage discount
+Flat discount
+First-time user
+Referral codes
+Service-specific
+
+
+Coupon validation logic
+Usage limit and expiry
+Auto-apply best coupon
+Bulk coupon generation
+Coupon usage analytics
+Promotional campaign management
+
+10. Notification System (Backend)
+
+Email notification service
+SMS gateway integration (Twilio, MSG91)
+Push notification service
+Notification templates
+Notification queue management
+Notification scheduling
+Notification preference management
+Notification delivery status
+Automated notifications:
+
+Booking confirmation
+Booking reminder (24hrs, 2hrs before)
+Staff assignment
+Payment confirmation
+Service completion
+Review request
+Offer announcements
+
+
+
+11. Review & Rating System
+
+Submit review and rating
+Review moderation queue
+Star rating calculation
+Service-wise ratings
+Staff-wise ratings
+Review response from admin
+Review helpful votes
+Featured reviews selection
+Review analytics
+Sentiment analysis (optional)
+
+12. Enquiry Management
+
+Capture enquiry form submissions
+Enquiry categorization
+Enquiry assignment to staff
+Enquiry status tracking
+Response management
+Follow-up reminders
+Convert enquiry to booking
+Enquiry analytics
+Auto-response emails
+
+13. Blog CMS
+
+Create/Update/Delete blog posts
+Rich text editor support
+Image upload and management
+Blog categories and tags
+Publish/Draft/Schedule posts
+SEO meta fields
+Blog analytics (views, engagement)
+Related posts algorithm
+Comment management (if enabled)
+
+14. Gallery Management
+
+Upload before/after images
+Image categorization by service
+Image approval workflow
+Image optimization
+Image metadata
+Gallery analytics
+
+15. Analytics & Reporting
+
+Revenue reports (daily, weekly, monthly, yearly)
+Booking reports
+Customer acquisition reports
+Service popularity analytics
+Staff performance reports
+Geographic service demand
+Customer retention metrics
+Conversion funnel analytics
+Custom date range reports
+Export reports (PDF, Excel)
+
+C. System Features
+16. Admin Dashboard APIs
+
+Dashboard statistics aggregation
+Real-time booking feed
+Revenue metrics
+Customer growth metrics
+Staff utilization data
+Alert and notification management
+System health monitoring
+
+17. Search & Filter Engine
+
+Service search
+Booking search
+Customer search
+Advanced filtering options
+Search suggestions
+Search history (user-specific)
+
+18. Email Service
+
+SMTP configuration
+Email template engine (Handlebars/EJS)
+Transactional emails
+Marketing email campaigns
+Email delivery tracking
+Bounce handling
+Unsubscribe management
+
+19. File Upload System
+
+Image upload (AWS S3 / Cloudinary)
+File type validation
+File size limits
+Image compression
+Multiple file uploads
+File deletion
+CDN integration
+
+20. Logging & Monitoring
+
+Application logging (Winston/Morgan)
+Error logging
+Access logs
+Performance monitoring
+API response time tracking
+Database query logging
+User activity logs
+System health checks
+
+21. Error Handling
+
+Centralized error handler
+Custom error classes
+Standardized error responses
+Validation error handling
+Database error handling
+Authentication error handling
+Payment error handling
+User-friendly error messages
+
+22. Response Formatting
+
+Standardized API response structure:
+
+json  {
+    "success": true/false,
+    "message": "Description",
+    "data": {},
+    "error": {},
+    "meta": {pagination, timestamp}
+  }
+
+HTTP status code standards
+Response compression
+CORS headers
+
+23. Data Validation
+
+Request body validation (Joi/Express-validator)
+Schema validation
+Business logic validation
+Custom validation rules
+Validation error aggregation
+
+24. Caching Strategy (Optional - Redis)
+
+Frequently accessed data caching
+Session storage
+Rate limit storage
+Real-time data caching
+Cache invalidation strategy
+
+25. Background Jobs
+
+Job queue implementation (Bull/Agenda)
+Scheduled tasks:
+
+Booking reminders
+Payment reconciliation
+Report generation
+Data cleanup
+Email campaigns
+
+
+Failed job retry mechanism
+
+26. API Documentation
+
+Swagger/OpenAPI documentation
+Postman collection
+API versioning
+Endpoint descriptions
+Request/response examples
+Authentication documentation
+
+
+3. Database Design (MongoDB)
+3.1 Collection Schemas
+A. Users Collection
+javascript{
+  _id: ObjectId,
+  firstName: String (required),
+  lastName: String (required),
+  email: String (required, unique, indexed),
+  phone: String (required, unique),
+  password: String (hashed, required),
+  role: String (enum: ['customer', 'staff', 'admin'], default: 'customer'),
+  profileImage: String (URL),
+  isEmailVerified: Boolean (default: false),
+  isPhoneVerified: Boolean (default: false),
+  isActive: Boolean (default: true),
+  loyaltyPoints: Number (default: 0),
+  addresses: [{
+    addressType: String (enum: ['home', 'office', 'other']),
+    addressLine1: String,
+    addressLine2: String,
+    city: String,
+    state: String,
+    pincode: String,
+    landmark: String,
+    isDefault: Boolean,
+    location: {
+      type: {type: String, default: 'Point'},
+      coordinates: [Number] // [longitude, latitude]
+    }
+  }],
+  preferences: {
+    language: String (default: 'en'),
+    notifications: {
+      email: Boolean (default: true),
+      sms: Boolean (default: true),
+      push: Boolean (default: true)
+    },
+    theme: String (enum: ['light', 'dark'], default: 'light')
+  },
+  socialAuth: {
+    googleId: String,
+    facebookId: String
+  },
+  lastLogin: Date,
+  createdAt: Date,
+  updatedAt: Date
+}
+
+// Indexes
+db.users.createIndex({email: 1})
+db.users.createIndex({phone: 1})
+db.users.createIndex({role: 1})
+db.users.createIndex({"addresses.location": "2dsphere"})
+B. Services Collection
+javascript{
+  _id: ObjectId,
+  serviceName: String (required, indexed),
+  slug: String (required, unique, indexed),
+  category: String (required, indexed),
+  description: String (required),
+  shortDescription: String,
+  features: [String],
+  inclusions: [String],
+  exclusions: [String],
+  pricing: {
+    basePrice: Number (required),
+    pricingModel: String (enum: ['fixed', 'area-based', 'hourly']),
+    areaRanges: [{
+      minArea: Number,
+      maxArea: Number,
+      price: Number
+    }],
+    unit: String // 'sqft', 'hour', 'flat'
+  },
+  duration: {
+    estimated: Number (minutes),
+    unit: String (default: 'minutes')
+  },
+  addOns: [{
+    name: String,
+    price: Number,
+    description: String
+  }],
+  images: [{
+    url: String,
+    alt: String,
+    isPrimary: Boolean
+  }],
+  availability: {
+    isAvailable: Boolean (default: true),
+    serviceAreas: [String], // pincodes or city names
+    workingDays: [Number], // 0-6 (Sunday-Saturday)
+    timeSlots: [{
+      startTime: String, // "09:00"
+      endTime: String // "18:00"
+    }]
+  },
+  seo: {
+    metaTitle: String,
+    metaDescription: String,
+    keywords: [String]
+  },
+  popularity: Number (default: 0),
+  averageRating: Number (default: 0),
+  totalReviews: Number (default: 0),
+  isActive: Boolean (default: true),
+  isFeatured: Boolean (default: false),
+  createdBy: ObjectId (ref: 'Users'),
+  createdAt: Date,
+  updatedAt: Date
+}
+
+// Indexes
+db.services.createIndex({serviceName: 1})
+db.services.createIndex({slug: 1})
+db.services.createIndex({category: 1})
+db.services.createIndex({isActive: 1})
+db.services.createIndex({averageRating: -1})
+C. Bookings Collection
+javascript{
+  _id: ObjectId,
+  bookingNumber: String (unique, auto-generated, indexed),
+  customerId: ObjectId (ref: 'Users', required, indexed),
+  services: [{
+    serviceId: ObjectId (ref: 'Services', required),
+    serviceName: String,
+    quantity: Number (default: 1),
+    basePrice: Number,
+    addOns: [{
+      name: String,
+      price: Number
+    }],
+    subtotal: Number
+  }],
+  serviceAddress: {
+    addressLine1: String (required),
+    addressLine2: String,
+    city: String (required),
+    state: String (required),
+    pincode: String (required),
+    landmark: String,
+    location: {
+      type: {type: String, default: 'Point'},
+      coordinates: [Number]
+    }
+  },
+  scheduledDate: Date (required, indexed),
+  scheduledTimeSlot: {
+    startTime: String (required),
+    endTime: String (required)
+  },
+  status: String (enum: ['pending', 'confirmed', 'assigned', 'in-progress', 'completed', 'cancelled', 'refunded'], default: 'pending', indexed),
+  assignedStaff: [{
+    staffId: ObjectId (ref: 'Users'),
+    staffName: String,
+    assignedAt: Date
+  }],
+  pricing: {
+    subtotal: Number (required),
+    discount: Number (default: 0),
+    couponCode: String,
+    tax: Number,
+    total: Number (required)
+  },
+  payment: {
+    paymentId: ObjectId (ref: 'Payments'),
+    paymentStatus: String (enum: ['pending', 'completed', 'failed', 'refunded'], indexed),
+    paymentMethod: String
+  },
+  specialInstructions: String,
+  recurringBooking: {
+    isRecurring: Boolean (default: false),
+    frequency: String (enum: ['weekly', 'biweekly', 'monthly']),
+    endDate: Date,
+    parentBookingId: ObjectId (ref: 'Bookings')
+  },
+  cancellation: {
+    isCancelled: Boolean (default: false),
+    cancelledBy: ObjectId (ref: 'Users'),
+    cancelledAt: Date,
+    cancellationReason: String,
+    refundAmount: Number
+  },
+  completion: {
+    isCompleted: Boolean (default: false),
+    completedAt: Date,
+    completionNotes: String
+  },
+  notifications: {
+    confirmationSent: Boolean (default: false),
+    reminderSent: Boolean (default: false),
+    assignmentSent: Boolean (default: false)
+  },
+  createdAt: Date,
+  updatedAt: Date
+}
+
+// Indexes
+db.bookings.createIndex({bookingNumber: 1})
+db.bookings.createIndex({customerId: 1})
+db.bookings.createIndex({status: 1})
+db.bookings.createIndex({scheduledDate: 1})
+db.bookings.createIndex({createdAt: -1})
+db.bookings.createIndex({"assignedStaff.staffId": 1})
+D. Payments Collection
+javascript{
+  _id: ObjectId,
+  transactionId: String (unique, indexed),
+  bookingId: ObjectId (ref: 'Bookings', required, indexed),
+  customerId: ObjectId (ref: 'Users', required, indexed),
+  amount: Number (required),
+  currency: String (default: 'INR'),
+  paymentMethod: String (enum: ['upi', 'card', 'netbanking', 'wallet'], required),
+  paymentGateway: String (enum: ['razorpay', 'stripe']),
+  gatewayTransactionId: String,
+  gatewayOrderId: String,
+  status: String (enum: ['initiated', 'pending', 'success', 'failed', 'refunded'], default: 'initiated', indexed),
+  paymentDetails: {
+    cardLast4: String,
+    cardBrand: String,
+    upiId: String,
+    bankName: String
+  },
+  refund: {
+    isRefunded: Boolean (default: false),
+    refundAmount: Number,
+    refundTransactionId: String,
+    refundedAt: Date,
+    refundReason: String
+  },
+  invoice: {
+    invoiceNumber: String,
+    invoiceUrl: String
+  },
+  metadata: Object,
+  createdAt: Date,
+  updatedAt: Date
+}
+
+// Indexes
+db.payments.createIndex({transactionId: 1})
+db.payments.createIndex({bookingId: 1})
+db.payments.createIndex({customerId: 1})
+db.payments.createIndex({status: 1})
+db.payments.createIndex({createdAt: -1})
+E. Enquiries Collection
+javascript{
+  _id: ObjectId,
+  enquiryNumber: String (unique, auto-generated),
+  name: String (required),
+  email: String (required),
+  phone: String (required),
+  serviceInterest: String,
+  message: String (required),
+  source: String (enum: ['website', 'mobile', 'referral'], default: 'website'),
+  status: String (enum: ['new', 'contacted', 'qualified', 'converted', 'closed'], default: 'new', indexed),
+  assignedTo: ObjectId (ref: 'Users'),
+  priority: String (enum: ['low', 'medium', 'high'], default: 'medium'),
+  responses: [{
+    respondedBy: ObjectId (ref: 'Users'),
+    responseMessage: String,
+    responseDate: Date
+  }],
+  convertedBookingId: ObjectId (ref: 'Bookings'),
+  followUpDate: Date,
+  ipAddress: String,
+  userAgent: String,
+  createdAt: Date,
+  updatedAt: Date
+}
+
+// Indexes
+db.enquiries.createIndex({status: 1})
+db.enquiries.createIndex({createdAt: -1})
+db.enquiries.createIndex({email: 1})
+F. Reviews Collection
+javascript{
+  _id: ObjectId,
+  bookingId: ObjectId (ref: 'Bookings', required, indexed),
+  customerId: ObjectId (ref: 'Users', required, indexed),
+  serviceId: ObjectId (ref: 'Services', required, indexed),
+  staffIds: [ObjectId] (ref: 'Users'),
+  rating: Number (required, min: 1, max: 5),
+  title: String,
+  reviewText: String (required),
+  images: [String],
+  aspects: {
+    quality: Number (min: 1, max: 5),
+    punctuality: Number (min: 1, max: 5),
+    professionalism: Number (min: 1, max: 5),
+    valueForMoney: Number (min: 1, max: 5)
+  },
+  isVerified: Boolean (default: true),
+  isApproved: Boolean (default: false, indexed),
+  isFeatured: Boolean (default: false),
+  helpfulVotes: Number (default: 0),
+  notHelpfulVotes: Number (default: 0),
+  adminResponse: {
+    responseText: String,
+    respondedBy: ObjectId (ref: 'Users'),
+    respondedAt: Date
+  },
+  createdAt: Date,
+  updatedAt: Date
+}
+
+// Indexes
+db.reviews.createIndex({bookingId: 1})
+db.reviews.createIndex({customerId: 1})
+db.reviews.createIndex({serviceId: 1})
+db.reviews.createIndex({isApproved: 1})
+db.reviews.createIndex({rating: -1})
+db.reviews.createIndex({createdAt: -1})
+G. Staff Collection (Extended User Info)
+javascript{
+  _id: ObjectId,
+  userId: ObjectId (ref: 'Users', required, unique, indexed),
+  employeeId: String (unique),
+  department: String (enum: ['cleaning', 'supervision', 'customer-service']),
+  designation: String,
+  joinDate: Date,
+  skills: [String],
+  certifications: [{
+    name: String,
+    issuedBy: String,
+    issuedDate: Date,
+    expiryDate: Date,
+    certificateUrl: String
+  }],
+  documents: [{
+    documentType: String (enum: ['aadhar', 'pan', 'police-verification', 'other']),
+    documentNumber: String,
+    documentUrl: String,
+    isVerified: Boolean
+  }],
+  availability: {
+    workingDays: [Number], // 0-6
+    workingHours: {
+      startTime: String,
+      endTime: String
+    },
+    isAvailable: Boolean (default: true)
+  },
+  serviceAreas: [String], // pincodes
+  performance: {
+    totalBookingsCompleted: Number (default: 0),
+    averageRating: Number (default: 0),
+    totalReviews: Number (default: 0),
+    punctualityScore: Number,
+    qualityScore: Number
+  },
+  leaves: [{
+    leaveType: String,
+    startDate: Date,
+    endDate: Date,
+    reason: String,
+    status: String (enum: ['pending', 'approved',ARContinue'rejected'])
+}],
+emergencyContact: {
+name: String,
+phone: String,
+relation: String
+},
+bankDetails: {
+accountNumber: String,
+ifscCode: String,
+accountHolderName: String,
+bankName: String
+},
+isActive: Boolean (default: true),
+createdAt: Date,
+updatedAt: Date
+}
+// Indexes
+db.staff.createIndex({userId: 1})
+db.staff.createIndex({employeeId: 1})
+db.staff.createIndex({isActive: 1})
+db.staff.createIndex({"performance.averageRating": -1})
+
+#### H. Coupons Collection
+```javascript
+{
+  _id: ObjectId,
+  couponCode: String (required, unique, uppercase, indexed),
+  description: String,
+  discountType: String (enum: ['percentage', 'flat'], required),
+  discountValue: Number (required),
+  maxDiscount: Number, // for percentage type
+  minOrderValue: Number (default: 0),
+  applicableServices: [ObjectId] (ref: 'Services'), // empty array = all services
+  usageLimit: {
+    totalLimit: Number, // null = unlimited
+    perUserLimit: Number (default: 1),
+    currentUsage: Number (default: 0)
+  },
+  validity: {
+    startDate: Date (required),
+    endDate: Date (required)
+  },
+  targetAudience: String (enum: ['all', 'new-users', 'existing-users', 'specific-users']),
+  specificUsers: [ObjectId] (ref: 'Users'),
+  isActive: Boolean (default: true, indexed),
+  campaignName: String,
+  termsAndConditions: [String],
+  usageHistory: [{
+    userId: ObjectId (ref: 'Users'),
+    bookingId: ObjectId (ref: 'Bookings'),
+    usedAt: Date
+  }],
+  createdBy: ObjectId (ref: 'Users'),
+  createdAt: Date,
+  updatedAt: Date
+}
+
+// Indexes
+db.coupons.createIndex({couponCode: 1})
+db.coupons.createIndex({isActive: 1})
+db.coupons.createIndex({"validity.endDate": 1})
+```
+
+#### I. Blog Posts Collection
+```javascript
+{
+  _id: ObjectId,
+  title: String (required, indexed),
+  slug: String (required, unique, indexed),
+  excerpt: String,
+  content: String (required), // HTML content
+  featuredImage: String (URL),
+  author: ObjectId (ref: 'Users', required),
+  category: String (required, indexed),
+  tags: [String] (indexed),
+  status: String (enum: ['draft', 'published', 'scheduled'], default: 'draft', indexed),
+  publishedAt: Date (indexed),
+  scheduledFor: Date,
+  seo: {
+    metaTitle: String,
+    metaDescription: String,
+    keywords: [String],
+    canonicalUrl: String
+  },
+  analytics: {
+    views: Number (default: 0),
+    uniqueViews: Number (default: 0),
+    averageReadTime: Number,
+    shares: Number (default: 0)
+  },
+  relatedPosts: [ObjectId] (ref: 'BlogPosts'),
+  isFeatured: Boolean (default: false),
+  allowComments: Boolean (default: true),
+  comments: [{
+    userId: ObjectId (ref: 'Users'),
+    userName: String,
+    commentText: String,
+    isApproved: Boolean (default: false),
+    commentedAt: Date
+  }],
+  createdAt: Date,
+  updatedAt: Date
+}
+
+// Indexes
+db.blogPosts.createIndex({slug: 1})
+db.blogPosts.createIndex({status: 1})
+db.blogPosts.createIndex({publishedAt: -1})
+db.blogPosts.createIndex({category: 1})
+db.blogPosts.createIndex({tags: 1})
+db.blogPosts.createIndex({title: "text", content: "text"})
+```
+
+#### J. Gallery Collection
+```javascript
+{
+  _id: ObjectId,
+  title: String (required),
+  description: String,
+  images: {
+    beforeImage: String (URL, required),
+    afterImage: String (URL, required)
+  },
+  serviceId: ObjectId (ref: 'Services', indexed),
+  serviceCategory: String (indexed),
+  bookingId: ObjectId (ref: 'Bookings'),
+  uploadedBy: ObjectId (ref: 'Users'),
+  location: {
+    city: String,
+    state: String
+  },
+  metadata: {
+    imageSize: String,
+    dimensions: String,
+    format: String
+  },
+  isApproved: Boolean (default: false, indexed),
+  isFeatured: Boolean (default: false),
+  displayOrder: Number,
+  views: Number (default: 0),
+  createdAt: Date,
+  updatedAt: Date
+}
+
+// Indexes
+db.gallery.createIndex({serviceId: 1})
+db.gallery.createIndex({isApproved: 1})
+db.gallery.createIndex({isFeatured: 1})
+db.gallery.createIndex({createdAt: -1})
+```
+
+#### K. Notifications Collection
+```javascript
+{
+  _id: ObjectId,
+  userId: ObjectId (ref: 'Users', required, indexed),
+  type: String (enum: ['booking', 'payment', 'promotion', 'system', 'review', 'alert'], required, indexed),
+  channel: String (enum: ['in-app', 'email', 'sms', 'push'], required),
+  title: String (required),
+  message: String (required),
+  data: Object, // additional contextual data
+  relatedEntity: {
+    entityType: String (enum: ['booking', 'payment', 'service']),
+    entityId: ObjectId
+  },
+  isRead: Boolean (default: false, indexed),
+  readAt: Date,
+  priority: String (enum: ['low', 'medium', 'high'], default: 'medium'),
+  deliveryStatus: {
+    status: String (enum: ['pending', 'sent', 'delivered', 'failed']),
+    sentAt: Date,
+    deliveredAt: Date,
+    failureReason: String
+  },
+  expiresAt: Date,
+  actionUrl: String,
+  createdAt: Date,
+  updatedAt: Date
+}
+
+// Indexes
+db.notifications.createIndex({userId: 1, isRead: 1})
+db.notifications.createIndex({type: 1})
+db.notifications.createIndex({createdAt: -1})
+db.notifications.createIndex({expiresAt: 1}, {expireAfterSeconds: 0})
+```
+
+#### L. System Settings Collection
+```javascript
+{
+  _id: ObjectId,
+  settingKey: String (required, unique, indexed),
+  settingValue: Mixed, // can be String, Number, Boolean, Object, Array
+  category: String (enum: ['general', 'payment', 'notification', 'booking', 'pricing']),
+  description: String,
+  isEditable: Boolean (default: true),
+  updatedBy: ObjectId (ref: 'Users'),
+  createdAt: Date,
+  updatedAt: Date
+}
+
+// Example settings:
+// - siteName, siteEmail, sitePhone
+// - bookingCancellationWindow (hours)
+// - taxRate (percentage)
+// - defaultCurrency
+// - paymentGatewayKeys
+```
+
+---
+
+### 3.2 Database Relationships
+
+**One-to-Many Relationships:**
+- Users → Bookings (one customer has many bookings)
+- Services → Bookings (one service can have many bookings)
+- Users → Reviews (one customer can write many reviews)
+- Services → Reviews (one service can have many reviews)
+- Users → Notifications (one user can have many notifications)
+- Bookings → Payments (one booking typically has one payment, but can have refunds)
+
+**Many-to-Many Relationships:**
+- Bookings ↔ Staff (one booking can have multiple staff, one staff can have multiple bookings)
+- Coupons ↔ Users (through usageHistory subdocument)
+- Services ↔ Bookings (through booking.services array)
+
+**Referential Integrity:**
+- Use MongoDB references (ObjectId) with manual population
+- Implement cascade deletion where appropriate (e.g., user deletion cascades to bookings)
+- Maintain data consistency through transaction support
+
+---
+
+### 3.3 Indexing Strategy
+
+**Performance Optimization:**
+- Single field indexes on frequently queried fields
+- Compound indexes for common query patterns
+- Text indexes for search functionality
+- Geospatial indexes for location-based queries
+- TTL indexes for automatic document expiration (notifications)
+
+**Index Monitoring:**
+- Regular index usage analysis
+- Remove unused indexes
+- Update indexes based on query patterns
+
+---
+
+## 4. System Architecture
+
+### 4.1 MERN Architecture Diagram
+┌─────────────────────────────────────────────────────────────────┐
+│                         CLIENT LAYER                             │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐         │
+│  │   Browser    │  │    Mobile    │  │   Tablet     │         │
+│  │   (React)    │  │   (React)    │  │   (React)    │         │
+│  └──────┬───────┘  └──────┬───────┘  └──────┬───────┘         │
+│         │                  │                  │                  │
+│         └──────────────────┼──────────────────┘                  │
+│                            │                                     │
+└────────────────────────────┼─────────────────────────────────────┘
+│
+│ HTTPS/REST API
+│
+┌────────────────────────────┼─────────────────────────────────────┐
+│                            │  APPLICATION LAYER                   │
+│                    ┌───────▼────────┐                            │
+│                    │  Load Balancer │                            │
+│                    │    (Nginx)     │                            │
+│                    └───────┬────────┘                            │
+│                            │                                     │
+│         ┌──────────────────┼──────────────────┐                 │
+│         │                  │                  │                  │
+│  ┌──────▼──────┐  ┌────────▼───────┐  ┌──────▼──────┐          │
+│  │  Node.js    │  │   Node.js      │  │  Node.js    │          │
+│  │  Instance 1 │  │   Instance 2   │  │  Instance 3 │          │
+│  │  (Express)  │  │   (Express)    │  │  (Express)  │          │
+│  └──────┬──────┘  └────────┬───────┘  └──────┬──────┘          │
+│         │                  │                  │                  │
+│         └──────────────────┼──────────────────┘                  │
+└────────────────────────────┼─────────────────────────────────────┘
+│
+┌────────────────────┼────────────────────┐
+│                    │                    │
+┌───────▼────────┐  ┌────────▼─────────┐  ┌──────▼──────┐
+│   MongoDB      │  │  Redis Cache     │  │   AWS S3    │
+│   Cluster      │  │  (Sessions/      │  │   (File     │
+│   (Primary +   │  │   Cache)         │  │   Storage)  │
+│   Replicas)    │  └──────────────────┘  └─────────────┘
+└───────┬────────┘
+│
+┌───────▼────────────────────────────────────────────────┐
+│              EXTERNAL SERVICES                          │
+│  ┌──────────┐  ┌──────────┐  ┌──────────┐            │
+│  │ Razorpay │  │  Twilio  │  │  AWS SES │            │
+│  │ Payment  │  │   SMS    │  │  Email   │            │
+│  └──────────┘  └──────────┘  └──────────┘            │
+└─────────────────────────────────────────────────────────┘
+
+**Architecture Layers:**
+
+1. **Presentation Layer (React.js)**
+   - Single Page Application (SPA)
+   - Component-based architecture
+   - State management (Redux/Context API)
+   - Client-side routing (React Router)
+
+2. **API Gateway/Load Balancer**
+   - Nginx for load balancing
+   - SSL/TLS termination
+   - Rate limiting
+   - Request routing
+
+3. **Application Layer (Node.js + Express.js)**
+   - RESTful API architecture
+   - Horizontal scaling capability
+   - Stateless design
+   - Middleware pipeline
+
+4. **Data Layer (MongoDB)**
+   - Document-based storage
+   - Replica set for high availability
+   - Automatic failover
+   - Data redundancy
+
+5. **Caching Layer (Redis - Optional)**
+   - Session management
+   - Frequently accessed data
+   - Rate limiting counters
+   - Real-time data
+
+6. **Storage Layer (AWS S3/Cloudinary)**
+   - Image and file storage
+   - CDN integration
+   - Automatic backup
+
+7. **External Services**
+   - Payment gateways
+   - SMS providers
+   - Email services
+   - Push notification services
+
+---
+
+### 4.2 Folder Structure
+
+#### Frontend (React.js)
+client/
+├── public/
+│   ├── index.html
+│   ├── favicon.ico
+│   ├── manifest.json
+│   └── robots.txt
+├── src/
+│   ├── assets/
+│   │   ├── images/
+│   │   ├── icons/
+│   │   └── fonts/
+│   ├── components/
+│   │   ├── common/
+│   │   │   ├── Header/
+│   │   │   │   ├── Header.jsx
+│   │   │   │   ├── Header.module.css
+│   │   │   │   └── index.js
+│   │   │   ├── Footer/
+│   │   │   ├── Button/
+│   │   │   ├── Input/
+│   │   │   ├── Card/
+│   │   │   ├── Modal/
+│   │   │   ├── Loader/
+│   │   │   └── Notification/
+│   │   ├── layout/
+│   │   │   ├── MainLayout.jsx
+│   │   │   ├── DashboardLayout.jsx
+│   │   │   └── AdminLayout.jsx
+│   │   ├── home/
+│   │   │   ├── HeroSection/
+│   │   │   ├── ServiceCards/
+│   │   │   ├── Testimonials/
+│   │   │   └── CTASection/
+│   │   ├── services/
+│   │   │   ├── ServiceList/
+│   │   │   ├── ServiceDetail/
+│   │   │   └── ServiceFilters/
+│   │   ├── booking/
+│   │   │   ├── BookingForm/
+│   │   │   ├── DateTimePicker/
+│   │   │   ├── AddressForm/
+│   │   │   └── BookingSummary/
+│   │   ├── dashboard/
+│   │   │   ├── UserDashboard/
+│   │   │   ├── AdminDashboard/
+│   │   │   └── StaffDashboard/
+│   │   └── payment/
+│   │       ├── PaymentForm/
+│   │       └── PaymentSuccess/
+│   ├── pages/
+│   │   ├── Home.jsx
+│   │   ├── About.jsx
+│   │   ├── Services.jsx
+│   │   ├── ServiceDetail.jsx
+│   │   ├── Pricing.jsx
+│   │   ├── Booking.jsx
+│   │   ├── Dashboard.jsx
+│   │   ├── Profile.jsx
+│   │   ├── Login.jsx
+│   │   ├── Register.jsx
+│   │   ├── Contact.jsx
+│   │   ├── Blog.jsx
+│   │   ├── BlogPost.jsx
+│   │   ├── Gallery.jsx
+│   │   ├── FAQ.jsx
+│   │   └── NotFound.jsx
+│   ├── redux/ (or context/)
+│   │   ├── store.js
+│   │   ├── slices/
+│   │   │   ├── authSlice.js
+│   │   │   ├── serviceSlice.js
+│   │   │   ├── bookingSlice.js
+│   │   │   ├── userSlice.js
+│   │   │   └── cartSlice.js
+│   │   └── middleware/
+│   ├── services/ (API services)
+│   │   ├── api.js
+│   │   ├── authService.js
+│   │   ├── bookingService.js
+│   │   ├── serviceService.js
+│   │   ├── paymentService.js
+│   │   └── userService.js
+│   ├── utils/
+│   │   ├── validation.js
+│   │   ├── formatters.js
+│   │   ├── constants.js
+│   │   └── helpers.js
+│   ├── hooks/
+│   │   ├── useAuth.js
+│   │   ├── useBooking.js
+│   │   ├── useForm.js
+│   │   └── useDebounce.js
+│   ├── routes/
+│   │   ├── AppRoutes.jsx
+│   │   ├── PrivateRoute.jsx
+│   │   └── AdminRoute.jsx
+│   ├── styles/
+│   │   ├── global.css
+│   │   ├── variables.css
+│   │   └── themes.css
+│   ├── App.jsx
+│   ├── index.js
+│   └── setupTests.js
+├── .env.example
+├── .gitignore
+├── package.json
+└── README.md
+
+#### Backend (Node.js + Express.js)
+server/
+├── src/
+│   ├── config/
+│   │   ├── database.js
+│   │   ├── cloudinary.js
+│   │   ├── redis.js
+│   │   ├── payment.js
+│   │   └── email.js
+│   ├── models/
+│   │   ├── User.js
+│   │   ├── Service.js
+│   │   ├── Booking.js
+│   │   ├── Payment.js
+│   │   ├── Review.js
+│   │   ├── Enquiry.js
+│   │   ├── Staff.js
+│   │   ├── Coupon.js
+│   │   ├── BlogPost.js
+│   │   ├── Gallery.js
+│   │   ├── Notification.js
+│   │   └── SystemSettings.js
+│   ├── controllers/
+│   │   ├── authController.js
+│   │   ├── userController.js
+│   │   ├── serviceController.js
+│   │   ├── bookingController.js
+│   │   ├── paymentController.js
+│   │   ├── reviewController.js
+│   │   ├── enquiryController.js
+│   │   ├── staffController.js
+│   │   ├── couponController.js
+│   │   ├── blogController.js
+│   │   ├── galleryController.js
+│   │   ├── notificationController.js
+│   │   └── adminController.js
+│   ├── routes/
+│   │   ├── index.js
+│   │   ├── authRoutes.js
+│   │   ├── userRoutes.js
+│   │   ├── serviceRoutes.js
+│   │   ├── bookingRoutes.js
+│   │   ├── paymentRoutes.js
+│   │   ├── reviewRoutes.js
+│   │   ├── enquiryRoutes.js
+│   │   ├── staffRoutes.js
+│   │   ├── couponRoutes.js
+│   │   ├── blogRoutes.js
+│   │   ├── galleryRoutes.js
+│   │   ├── notificationRoutes.js
+│   │   └── adminRoutes.js
+│   ├── middleware/
+│   │   ├── authMiddleware.js
+│   │   ├── roleMiddleware.js
+│   │   ├── validationMiddleware.js
+│   │   ├── errorMiddleware.js
+│   │   ├── rateLimitMiddleware.js
+│   │   ├── uploadMiddleware.js
+│   │   └── loggerMiddleware.js
+│   ├── services/
+│   │   ├── emailService.js
+│   │   ├── smsService.js
+│   │   ├── paymentService.js
+│   │   ├── notificationService.js
+│   │   ├── uploadService.js
+│   │   └── analyticsService.js
+│   ├── utils/
+│   │   ├── validators.js
+│   │   ├── helpers.js
+│   │   ├── constants.js
+│   │   ├── logger.js
+│   │   ├── errorHandler.js
+│   │   └── responseFormatter.js
+│   ├── jobs/
+│   │   ├── bookingReminderJob.js
+│   │   ├── paymentReconciliationJob.js
+│   │   ├── reportGenerationJob.js
+│   │   └── dataCleanupJob.js
+│   ├── validators/
+│   │   ├── authValidator.js
+│   │   ├── bookingValidator.js
+│   │   ├── serviceValidator.js
+│   │   └── userValidator.js
+│   ├── tests/
+│   │   ├── unit/
+│   │   ├── integration/
+│   │   └── e2e/
+│   ├── docs/
+│   │   ├── swagger.js
+│   │   └── api-documentation.md
+│   ├── app.js
+│   └── server.js
+├── uploads/ (temporary, for development)
+├── logs/
+├── .env.example
+├── .gitignore
+├── package.json
+├── README.md
+└── ecosystem.config.js (PM2 config)
+
+---
+
+### 4.3 API Endpoints Documentation
+
+#### Authentication APIs
+POST   /api/v1/auth/register                 - User registration
+POST   /api/v1/auth/login                    - User login
+POST   /api/v1/auth/logout                   - User logout
+POST   /api/v1/auth/refresh-token            - Refresh JWT token
+POST   /api/v1/auth/forgot-password          - Request password reset
+POST   /api/v1/auth/reset-password/:token    - Reset password
+POST   /api/v1/auth/verify-email/:token      - Verify email address
+POST   /api/v1/auth/resend-verification      - Resend verification email
+POST   /api/v1/auth/social/google            - Google OAuth login
+POST   /api/v1/auth/social/facebook          - Facebook OAuth login
+POST   /api/v1/auth/otp/send                 - Send OTP to phone
+POST   /api/v1/auth/otp/verify               - Verify OTP
+
+**Example: User Registration**
+POST /api/v1/auth/register
+Request Body:
+{
+"firstName": "John",
+"lastName": "Doe",
+"email": "john.doe@example.com",
+"phone": "+919876543210",
+"password": "SecurePass@123"
+}
+Response (201):
+{
+"success": true,
+"message": "Registration successful. Please verify your email.",
+"data": {
+"user": {
+"id": "507f1f77bcf86cd799439011",
+"firstName": "John",
+"lastName": "Doe",
+"email": "john.doe@example.com",
+"role": "customer"
+},
+"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+}
+}
+
+#### Service APIs
+GET    /api/v1/services                      - Get all services (with filters)
+GET    /api/v1/services/:id                  - Get service by ID
+GET    /api/v1/services/slug/:slug           - Get service by slug
+GET    /api/v1/services/category/:category   - Get services by category
+GET    /api/v1/services/featured             - Get featured services
+POST   /api/v1/services                      - Create service (Admin)
+PUT    /api/v1/services/:id                  - Update service (Admin)
+DELETE /api/v1/services/:id                  - Delete service (Admin)
+GET    /api/v1/services/:id/reviews          - Get service reviews
+GET    /api/v1/services/search               - Search services
+
+**Example: Get All Services**
+GET /api/v1/services?category=home&limit=10&page=1&sort=-popularity
+Response (200):
+{
+"success": true,
+"message": "Services retrieved successfully",
+"data": {
+"services": [
+{
+"id": "507f1f77bcf86cd799439011",
+"serviceName": "Regular House Cleaning",
+"slug": "regular-house-cleaning",
+"category": "home",
+"shortDescription": "Complete home cleaning service",
+"pricing": {
+"basePrice": 999,
+"pricingModel": "area-based"
+},
+"averageRating": 4.5,
+"totalReviews": 245,
+"images": [...]
+},
+...
+]
+},
+"meta": {
+"total": 45,
+"page": 1,
+"limit": 10,
+"pages": 5
+}
+}
+
+#### Booking APIs
+POST   /api/v1/bookings                      - Create new booking
+GET    /api/v1/bookings                      - Get user bookings (Customer)
+GET    /api/v1/bookings/:id                  - Get booking details
+PUT    /api/v1/bookings/:id                  - Update booking (reschedule)
+DELETE /api/v1/bookings/:id                  - Cancel booking
+GET    /api/v1/bookings/:id/invoice          - Download invoice
+POST   /api/v1/bookings/:id/assign           - Assign staff (Admin)
+PUT    /api/v1/bookings/:id/status           - Update booking status
+GET    /api/v1/bookings/calendar             - Get calendar view
+POST   /api/v1/bookings/check-availability   - Check time slot availability
+GET    /api/v1/bookings/upcoming             - Get upcoming bookings
+GET    /api/v1/bookings/history              - Get booking history
+
+**Example: Create Booking**
+POST /api/v1/bookings
+Request Body:
+{
+"services": [
+{
+"serviceId": "507f1f77bcf86cd799439011",
+"quantity": 1,
+"addOns": ["eco-friendly-products"]
+}
+],
+"serviceAddress": {
+"addressLine1": "123 Main Street",
+"city": "Mumbai",
+"state": "Maharashtra",
+"pincode": "400001"
+},
+"scheduledDate": "2025-12-05",
+"scheduledTimeSlot": {
+"startTime": "10:00",
+"endTime": "12:00"
+},
+"specialInstructions": "Please bring eco-friendly products"
+}
+Response (201):
+{
+"success": true,
+"message": "Booking created successfully",
+"data": {
+"booking": {
+"id": "507f1f77bcf86cd799439012",
+"bookingNumber": "DHCC-2025-001234",
+"status": "pending",
+"scheduledDate": "2025-12-05T10:00:00.000Z",
+"pricing": {
+"subtotal": 1499,
+"discount": 0,
+"tax": 269.82,
+"total": 1768.82
+}
+}
+}
+}
+
+#### Payment APIs
+POST   /api/v1/payments/create-order         - Create payment order
+POST   /api/v1/payments/verify               - Verify payment
+GET    /api/v1/payments/:id                  - Get payment details
+POST   /api/v1/payments/:id/refund           - Process refund (Admin)
+GET    /api/v1/payments/booking/:bookingId   - Get booking payments
+GET    /api/v1/payments/methods              - Get available payment methods
+POST   /api/v1/payments/webhook/razorpay     - Razorpay webhook
+
+#### User APIs
+GET    /api/v1/users/profile                 - Get user profile
+PUT    /api/v1/users/profile                 - Update user profile
+PUT    /api/v1/users/password                - Change password
+POST   /api/v1/users/addresses               - Add address
+PUT    /api/v1/users/addresses/:id           - Update address
+DELETE /api/v1/users/addresses/:id           - Delete address
+GET    /api/v1/users/loyalty-points          - Get loyalty points
+GET    /api/v1/users/notifications           - Get notifications
+PUT    /api/v1/users/notifications/:id/read  - Mark notification as read
+DELETE /api/v1/users/account                 - Deactivate account
+
+#### Review APIs
+POST   /api/v1/reviews                       - Submit review
+GET    /api/v1/reviews/service/:serviceId    - Get service reviews
+GET    /api/v1/reviews/booking/:bookingId    - Get booking review
+PUT    /api/v1/reviews/:id                   - Update review
+DELETE /api/v1/reviews/:id                   - Delete review (Admin)
+POST   /api/v1/reviews/:id/helpful           - Mark review helpful
+POST   /api/v1/reviews/:id/respond           - Admin response to review
+
+#### Admin APIs
+GET    /api/v1/admin/dashboard               - Dashboard analytics
+GET    /api/v1/admin/bookings                - Get all bookings
+GET    /api/v1/admin/customers               - Get all customers
+GET    /api/v1/admin/staff                   - Get all staff
+POST   /api/v1/admin/staff                   - Add staff member
+PUT    /api/v1/admin/staff/:id               - Update staff
+GET    /api/v1/admin/enquiries               - Get enquiries
+PUT    /api/v1/admin/enquiries/:id           - Update enquiry status
+GET    /api/v1/admin/reports/revenue         - Revenue reports
+GET    /api/v1/admin/reports/bookings        - Booking reports
+GET    /api/v1/admin/reports/customers       - Customer reports
+POST   /api/v1/admin/notifications/send      - Send bulk notifications
+GET    /api/v1/admin/analytics               - Detailed analytics
+
+#### Coupon APIs
+GET    /api/v1/coupons                       - Get available coupons
+POST   /api/v1/coupons/validate              - Validate coupon code
+POST   /api/v1/coupons                       - Create coupon (Admin)
+PUT    /api/v1/coupons/:id                   - Update coupon (Admin)
+DELETE /api/v1/coupARContinueons/:id                   - Delete coupon (Admin)
+GET    /api/v1/coupons/:code                 - Get coupon by code
+
+#### Enquiry APIs
+POST   /api/v1/enquiries                     - Submit enquiry
+GET    /api/v1/enquiries                     - Get all enquiries (Admin)
+GET    /api/v1/enquiries/:id                 - Get enquiry details
+PUT    /api/v1/enquiries/:id                 - Update enquiry
+POST   /api/v1/enquiries/:id/respond         - Respond to enquiry
+
+#### Blog APIs
+GET    /api/v1/blog/posts                    - Get all blog posts
+GET    /api/v1/blog/posts/:slug              - Get post by slug
+GET    /api/v1/blog/posts/category/:category - Get posts by category
+POST   /api/v1/blog/posts                    - Create post (Admin)
+PUT    /api/v1/blog/posts/:id                - Update post (Admin)
+DELETE /api/v1/blog/posts/:id                - Delete post (Admin)
+POST   /api/v1/blog/posts/:id/comments       - Add comment
+GET    /api/v1/blog/categories               - Get categories
+
+#### Gallery APIs
+GET    /api/v1/gallery                       - Get gallery images
+GET    /api/v1/gallery/:id                   - Get image details
+POST   /api/v1/gallery                       - Upload image (Admin)
+PUT    /api/v1/gallery/:id                   - Update image (Admin)
+DELETE /api/v1/gallery/:id                   - Delete image (Admin)
+GET    /api/v1/gallery/service/:serviceId    - Get service gallery
+
+#### Staff APIs
+GET    /api/v1/staff/profile                 - Get staff profile
+GET    /api/v1/staff/bookings                - Get assigned bookings
+PUT    /api/v1/staff/bookings/:id/status     - Update booking status
+GET    /api/v1/staff/schedule                - Get schedule
+POST   /api/v1/staff/leaves                  - Request leave
+GET    /api/v1/staff/performance             - Get performance metrics
+
+---
+
+### 4.4 Authentication/Authorization Workflow
+┌──────────┐                ┌──────────┐
+│  Client  │                │  Server  │
+└────┬─────┘                └────┬─────┘
+│                           │
+│ 1. Login Request          │
+│  (email, password)        │
+│──────────────────────────>│
+│                           │
+│                           │ 2. Validate Credentials
+│                           │    (Bcrypt compare)
+│                           │
+│ 3. JWT Token + User Data  │
+│<──────────────────────────│
+│   {token, user, role}     │
+│                           │
+│ 4. Store Token            │
+│    (localStorage/cookie)  │
+│                           │
+│ 5. API Request            │
+│    (Authorization:        │
+│     Bearer <token>)       │
+│──────────────────────────>│
+│                           │
+│                           │ 6. Verify Token
+│                           │    (JWT verify)
+│                           │
+│                           │ 7. Check Role
+│                           │    (RBAC middleware)
+│                           │
+│ 8. Response / Error       │
+│<──────────────────────────│
+│                           │
+│ 9. Token Expired?         │
+│──────────────────────────>│
+│                           │
+│ 10. Refresh Token         │
+│<──────────────────────────│
+│                           │
+
+**JWT Token Structure:**
+```javascript
+{
+  "header": {
+    "alg": "HS256",
+    "typ": "JWT"
+  },
+  "payload": {
+    "userId": "507f1f77bcf86cd799439011",
+    "email": "user@example.com",
+    "role": "customer",
+    "iat": 1701234567,
+    "exp": 1701320967
+  },
+  "signature": "..."
+}
+```
+
+**Authorization Flow:**
+1. User logs in with credentials
+2. Server validates and generates JWT token (24h expiry)
+3. Client stores token securely
+4. Client includes token in Authorization header for protected routes
+5. Server middleware verifies token and extracts user info
+6. Role-based middleware checks permissions
+7. Request proceeds or returns 401/403 error
+8. Refresh token mechanism extends session without re-login
+
+---
+
+### 4.5 Cache Strategy (Redis - Optional)
+
+**Caching Layers:**
+
+1. **Session Cache**
+   - Store user sessions
+   - TTL: 24 hours
+   - Key format: `session:{userId}`
+
+2. **API Response Cache**
+   - Frequently accessed data (services, blogs)
+   - TTL: 5-15 minutes
+   - Key format: `api:{endpoint}:{params}`
+
+3. **Database Query Cache**
+   - Complex aggregation results
+   - TTL: 10 minutes
+   - Key format: `db:{collection}:{query}`
+
+4. **Rate Limiting**
+   - Track API request counts
+   - TTL: 1 hour rolling window
+   - Key format: `ratelimit:{ip}:{endpoint}`
+
+**Cache Invalidation Strategy:**
+- Time-based expiration (TTL)
+- Event-based invalidation (on data update)
+- Manual purge (admin action)
+
+---
+
+### 4.6 Deployment Architecture
+┌─────────────────────────────────────────────────────────┐
+│                     CLOUD PLATFORM                       │
+│                   (AWS / DigitalOcean)                   │
+├─────────────────────────────────────────────────────────┤
+│                                                          │
+│  ┌────────────────────────────────────────────────┐    │
+│  │              CDN (CloudFront / Cloudflare)     │    │
+│  │  - Static assets caching                       │    │
+│  │  - SSL/TLS termination                        │    │
+│  └───────────────────┬────────────────────────────┘    │
+│                      │                                   │
+│  ┌───────────────────▼────────────────────────────┐    │
+│  │           Load Balancer (AWS ELB / Nginx)      │    │
+│  │  - Traffic distribution                        │    │
+│  │  - Health checks                               │    │
+│  │  - SSL offloading                             │    │
+│  └───────────┬──────────────┬─────────────────────┘    │
+│              │              │                            │
+│  ┌───────────▼─────┐  ┌────▼──────────┐                │
+│  │  Frontend        │  │  Backend      │                │
+│  │  (Vercel/        │  │  (AWS EC2/    │                │
+│  │   Netlify)       │  │   Render/     │                │
+│  │  - React build   │  │   Railway)    │                │
+│  │  - Static files  │  │  - Node.js    │                │
+│  └──────────────────┘  │  - Express    │                │
+│                        │  - Auto-scale │                │
+│                        └────┬───────────┘                │
+│                             │                            │
+│  ┌──────────────────────────┼────────────────────┐     │
+│  │                          │                     │     │
+│  │  ┌───────────────┐  ┌───▼──────────┐  ┌──────▼───┐ │
+│  │  │   MongoDB     │  │  Redis Cache │  │  AWS S3  │ │
+│  │  │   Atlas       │  │  (Optional)  │  │  Bucket  │ │
+│  │  │  - Replica Set│  │  - Session   │  │  - Images│ │
+│  │  │  - Auto backup│  │  - Cache     │  │  - Files │ │
+│  │  └───────────────┘  └──────────────┘  └──────────┘ │
+│  │                                                      │
+│  └──────────────────────────────────────────────────────┘
+│                                                          │
+│  ┌──────────────────────────────────────────────────┐  │
+│  │          External Services Integration           │  │
+│  │  - Razorpay (Payments)                          │  │
+│  │  - AWS SES / SendGrid (Email)                   │  │
+│  │  - Twilio / MSG91 (SMS)                         │  │
+│  │  - Cloudinary (Image optimization)              │  │
+│  └──────────────────────────────────────────────────┘  │
+│                                                          │
+│  ┌──────────────────────────────────────────────────┐  │
+│  │          Monitoring & Logging                    │  │
+│  │  - CloudWatch / New Relic (Monitoring)          │  │
+│  │  - Sentry (Error tracking)                       │  │
+│  │  - Loggly / ELK Stack (Logging)                 │  │
+│  └──────────────────────────────────────────────────┘  │
+│                                                          │
+└──────────────────────────────────────────────────────────┘
+
+**Deployment Options:**
+
+**Option 1: AWS (Full Featured)**
+- **Frontend:** AWS S3 + CloudFront
+- **Backend:** AWS EC2 with Auto Scaling + ELB
+- **Database:** MongoDB Atlas
+- **Storage:** AWS S3
+- **Cache:** AWS ElastiCache (Redis)
+- **Monitoring:** CloudWatch
+
+**Option 2: Vercel + Render (Simple & Cost-Effective)**
+- **Frontend:** Vercel
+- **Backend:** Render
+- **Database:** MongoDB Atlas
+- **Storage:** Cloudinary
+- **Cache:** Render Redis (if needed)
+
+**Option 3: DigitalOcean (Balanced)**
+- **Frontend:** DigitalOcean App Platform
+- **Backend:** DigitalOcean Droplets
+- **Database:** MongoDB Atlas or DigitalOcean Managed MongoDB
+- **Storage:** DigitalOcean Spaces
+- **Load Balancer:** DigitalOcean Load Balancer
+
+---
+
+### 4.7 Scalability Plan
+
+**Horizontal Scaling:**
+- Multiple Node.js instances behind load balancer
+- Stateless application design
+- Session storage in Redis (shared across instances)
+- Database read replicas for read-heavy operations
+
+**Vertical Scaling:**
+- Increase server resources (CPU, RAM) as needed
+- Database instance upgrades
+- Cache memory expansion
+
+**Database Scaling:**
+- MongoDB sharding for large datasets
+- Index optimization
+- Query optimization
+- Connection pooling
+
+**Performance Optimization:**
+- CDN for static assets
+- Image optimization and lazy loading
+- Code splitting and minification
+- API response compression
+- Database query caching
+- Implement pagination for large datasets
+
+**Scalability Milestones:**
+- **Phase 1 (0-1000 users):** Single instance, basic setup
+- **Phase 2 (1000-10,000 users):** Load balancer + 2-3 instances + caching
+- **Phase 3 (10,000+ users):** Auto-scaling + database replication + CDN optimization
+
+---
+
+## 5. Modern UI/UX Requirements
+
+### 5.1 Design System
+
+**Color Palette:**
+Primary Colors:
+
+Primary Blue: #2563EB (Trust, Professional)
+Primary Hover: #1D4ED8
+Primary Light: #DBEAFE
+
+Secondary Colors:
+
+Secondary Green: #10B981 (Success, Clean)
+Secondary Hover: #059669
+Secondary Light: #D1FAE5
+
+Neutral Colors:
+
+Dark: #1F2937
+Gray: #6B7280
+Light Gray: #F3F4F6
+White: #FFFFFF
+
+Accent Colors:
+
+Warning: #F59E0B
+Error: #EF4444
+Info: #3B82F6
+Success: #10B981
+
+Background:
+
+Light Mode: #FFFFFF, #F9FAFB
+Dark Mode: #111827, #1F2937
+
+
+**Typography:**
+Font Family:
+
+Headings: 'Poppins', sans-serif
+Body: 'Inter', sans-serif
+Monospace: 'Roboto Mono', monospace
+
+Font Sizes (rem):
+
+H1: 3.5rem (56px)
+H2: 2.5rem (40px)
+H3: 2rem (32px)
+H4: 1.5rem (24px)
+H5: 1.25rem (20px)
+H6: 1rem (16px)
+Body: 1rem (16px)
+Small: 0.875rem (14px)
+Tiny: 0.75rem (12px)
+
+Font Weights:
+
+Light: 300
+Regular: 400
+Medium: 500
+Semibold: 600
+Bold: 700
+
+
+**Spacing System (Tailwind-inspired):**
+4px, 8px, 12px, 16px, 20px, 24px, 32px, 40px, 48px, 64px, 80px, 96px
+
+**Border Radius:**
+
+Small: 4px
+Medium: 8px
+Large: 12px
+X-Large: 16px
+Round: 50%
+
+
+**Shadows:**
+
+Shadow SM: 0 1px 2px rgba(0, 0, 0, 0.05)
+Shadow MD: 0 4px 6px rgba(0, 0, 0, 0.1)
+Shadow LG: 0 10px 15px rgba(0, 0, 0, 0.1)
+Shadow XL: 0 20px 25px rgba(0, 0, 0, 0.15)
+
+
+---
+
+### 5.2 Component Guidelines
+
+**Buttons:**
+- Primary: Solid blue background, white text
+- Secondary: Outlined, transparent background
+- Success: Green background for confirmations
+- Danger: Red background for destructive actions
+- Icon buttons: Circular, minimal
+- Hover states: Slightly darker shade + subtle scale
+- Disabled state: Gray, reduced opacity
+- Loading state: Spinner icon
+
+**Input Fields:**
+- Label on top or floating label
+- Clear border, focus state with primary color
+- Error state: Red border + error message below
+- Success state: Green border + checkmark
+- Helper text: Small gray text below input
+- Icon support: Left or right positioned
+- Placeholder text: Light gray
+
+**Cards:**
+- White/dark background with shadow
+- Rounded corners (8-12px)
+- Padding: 20-24px
+- Hover effect: Subtle lift + shadow increase
+- Image cards: Image on top, content below
+
+**Modals:**
+- Centered on screen
+- Dark overlay background (rgba(0,0,0,0.5))
+- White/dark card with close button
+- Smooth fade-in animation
+- Click outside to close option
+
+**Navigation:**
+- Sticky header on scroll
+- Smooth scroll behavior
+- Active state highlighting
+- Mobile: Hamburger menu with slide-in drawer
+- Dropdown menus with arrow indicators
+
+**Loading States:**
+- Skeleton screens for content loading
+- Spinners for actions
+- Progress bars for multi-step processes
+- Shimmer effect for placeholders
+
+---
+
+### 5.3 Animation & Transitions
+
+**Page Transitions:**
+- Fade in/out: 300ms
+- Slide in from bottom: 400ms
+- Scale up: 200ms
+
+**Hover Effects:**
+- Button scale: scale(1.05), duration: 200ms
+- Card lift: translateY(-4px), duration: 300ms
+- Icon rotation: rotate(15deg), duration: 200ms
+
+**Scroll Animations:**
+- Fade in on scroll: IntersectionObserver
+- Slide up on scroll: translateY(20px) → translateY(0)
+- Stagger children animations: 100ms delay between elements
+
+**Micro-interactions:**
+- Button click: Ripple effect
+- Checkbox toggle: Smooth checkmark animation
+- Switch toggle: Slide animation
+- Accordion expand: Smooth height transition
+- Toast notifications: Slide in from top-right
+
+**Loading Animations:**
+- Spinner: Continuous rotation
+- Progress bar: Linear movement with easing
+- Skeleton: Shimmer effect (gradient animation)
+- Pulsing: Opacity change (0.5-1.0)
+
+**Library Recommendations:**
+- Framer Motion (React animations)
+- GSAP (Complex animations)
+- React Spring (Physics-based animations)
+- AOS (Animate On Scroll)
+
+---
+
+### 5.4 Responsive Breakpoints
+```css
+/* Mobile First Approach */
+/* Mobile: 320px - 767px */
+@media (min-width: 320px) { /* Base styles */ }
+
+/* Tablet: 768px - 1023px */
+@media (min-width: 768px) { /* Tablet adjustments */ }
+
+/* Desktop: 1024px - 1439px */
+@media (min-width: 1024px) { /* Desktop layout */ }
+
+/* Large Desktop: 1440px+ */
+@media (min-width: 1440px) { /* Wide screen optimization */ }
+```
+
+**Responsive Design Rules:**
+- Mobile first development approach
+- Single column layout on mobile
+- 2-3 column grid on tablet
+- 3-4 column grid on desktop
+- Touch targets minimum 44x44px on mobile
+- Readable line length: 50-75 characters
+- Scalable font sizes (rem units)
+- Flexible images (max-width: 100%)
+
+---
+
+### 5.5 Accessibility (A11Y)
+
+**WCAG 2.1 Level AA Compliance:**
+- Color contrast ratio minimum 4.5:1
+- Keyboard navigation support
+- Screen reader compatibility
+- ARIA labels for interactive elements
+- Focus indicators on all focusable elements
+- Alt text for all images
+- Semantic HTML structure
+- Form field labels
+- Error messages clearly associated with fields
+- Skip to main content link
+
+**Implementation:**
+- Use semantic HTML5 tags
+- Add role attributes where needed
+- Implement keyboard shortcuts
+- Test with screen readers (NVDA, JAWS)
+- Color-blind friendly palette
+- Provide text alternatives for icons
+
+---
+
+### 5.6 UI Components List
+
+**Core Components:**
+1. Button (Primary, Secondary, Tertiary, Icon)
+2. Input (Text, Email, Phone, Password, Number)
+3. Textarea
+4. Select Dropdown
+5. Checkbox
+6. Radio Button
+7. Toggle Switch
+8. Date Picker
+9. Time Picker
+10. File Upload (Drag & Drop)
+11. Search Bar
+12. Tabs
+13. Accordion
+14. Modal/Dialog
+15. Drawer (Side Panel)
+16. Tooltip
+17. Popover
+18. Dropdown Menu
+19. Breadcrumb
+20. Pagination
+21. Card
+22. Badge
+23. Tag/Chip
+24. Avatar
+25. Progress Bar
+26. Spinner/Loader
+27. Skeleton Loader
+28. Toast Notification
+29. Alert/Banner
+30. Divider
+31. Stepper (Multi-step)
+32. Rating Stars
+33. Calendar
+34. Table (Data Grid)
+35. Empty State
+36. 404 Page
+37. Hero Section
+38. Testimonial Card
+39. Pricing Card
+40. Service Card
+
+**Complex Components:**
+1. Booking Wizard (Multi-step Form)
+2. Dashboard Widgets
+3. Charts (Line, Bar, Pie)
+4. Data Table with Filters
+5. Image Gallery with Lightbox
+6. Carousel/Slider
+7. Map Integration
+8. Chat Interface (for future chatbot)
+9. Profile Card
+10. Notification Center
+
+---
+
+## 6. Payment Integration
+
+### 6.1 Payment Gateway: Razorpay (Primary)
+
+**Razorpay Features:**
+- Support for all major payment methods in India
+- Instant payment confirmation
+- Automatic refund processing
+- Comprehensive dashboard
+- Webhook support for payment events
+- Test mode for development
+
+**Integration Flow:**
+┌──────────┐      ┌──────────┐      ┌────────────┐
+│  Client  │      │  Server  │      │  Razorpay  │
+└────┬─────┘      └────┬─────┘      └─────┬──────┘
+│                 │                   │
+│ 1. Initiate     │                   │
+│    Payment      │                   │
+│────────────────>│                   │
+│                 │                   │
+│                 │ 2. Create Order   │
+│                 │──────────────────>│
+│                 │                   │
+│                 │ 3. Order ID       │
+│                 │<──────────────────│
+│                 │                   │
+│ 4. Order Data   │                   │
+│<────────────────│                   │
+│                 │                   │
+│ 5. Razorpay     │                   │
+│    Checkout     │                   │
+│─────────────────┼──────────────────>│
+│                 │  6. Payment UI    │
+│<────────────────┼───────────────────│
+│                 │                   │
+│ 7. User pays    │                   │
+│─────────────────┼──────────────────>│
+│                 │                   │
+│                 │ 8. Webhook event  │
+│                 │<──────────────────│
+│                 │                   │
+│ 9. Payment      │                   │
+│    response     │                   │
+│<────────────────│                   │
+│                 │                   │
+│10. Verify &     │                   │
+│   Update Status │                   │
+│────────────────>│                   │
+│                 │                   │
+│11. Confirmation │                   │
+│<────────────────│                   │
+│                 │                   │
+
+**Implementation Steps:**
+
+1. **Backend: Create Order**
+```javascript
+// Create Razorpay order
+const order = await razorpay.orders.create({
+  amount: amount * 100, // amount in paise
+  currency: "INR",
+  receipt: bookingNumber,
+  notes: {
+    bookingId: bookingId,
+    customerId: customerId
+  }
+});
+```
+
+2. **Frontend: Initialize Checkout**
+```javascript
+const options = {
+  key: process.env.RAZORPAY_KEY_ID,
+  amount: order.amount,
+  currency: order.currency,
+  name: "Diamond House Cleaning",
+  description: "Booking Payment",
+  order_id: order.id,
+  handler: function(response) {
+    // Send payment details to backend for verification
+    verifyPayment(response);
+  },
+  prefill: {
+    name: user.name,
+    email: user.email,
+    contact: user.phone
+  },
+  theme: {
+    color: "#2563EB"
+  }
+};
+
+const rzp = new Razorpay(options);
+rzp.open();
+```
+
+3. **Backend: Verify Payment**
+```javascript
+const crypto = require('crypto');
+
+const generated_signature = crypto
+  .createHmac('sha256', process.env.RAZORPAY_KEY_SECRET)
+  .update(order_id + "|" + razorpay_payment_id)
+  .digest('hex');
+
+if (generated_signature === razorpay_signature) {
+  // Payment verified
+  // Update booking status
+  // Send confirmation email
+}
+```
+
+4. **Webhook Handling**
+```javascript
+// Handle Razorpay webhooks
+app.post('/api/v1/payments/webhook/razorpay', (req, res) => {
+  const secret = process.env.RAZORPAY_WEBHOOK_SECRET;
+  const signature = req.headers['x-razorpay-signature'];
+  
+  const isValid = validateWebhookSignature(
+    req.body,
+    signature,
+    secret
+  );
+  
+  if (isValid) {
+    const event = req.body.event;
+    
+    switch(event) {
+      case 'payment.captured':
+        // Handle successful payment
+        break;
+      case 'payment.failed':
+        // Handle failed payment
+        break;
+      case 'refund.processed':
+        // Handle refund
+        break;
+    }
+  }
+  
+  res.status(200).send('OK');
+});
+```
+
+---
+
+### 6.2 Payment Methods Supported
+
+**1. UPI (Unified Payments Interface)**
+- Google Pay
+- PhonePe
+- Paytm UPI
+- BHIM
+- Any UPI app
+- Direct UPI ID entry
+
+**2. Credit/Debit Cards**
+- Visa
+- Mastercard
+- Maestro
+- RuPay
+- American Express
+- Diners Club
+- Saved cards (optional)
+
+**3. Net Banking**
+- All major Indian banks
+- Direct bank account selection
+- Secure bank gateway redirect
+
+**4. Digital Wallets**
+- Paytm Wallet
+- PhonePe Wallet
+- Mobikwik
+- Freecharge
+- Airtel Money
+
+**5. EMI Options (Future)**
+- Card EMI
+- Cardless EMI
+- 3, 6, 9, 12 month tenures
+
+**6. Pay Later (Future)**
+- Simpl
+- LazyPay
+- Flexmoney
+
+---
+
+### 6.3 Payment Flow (Step-by-Step)
+
+**Step 1: Service Selection**
+- User browses and selects services
+- Adds to cart or proceeds to book
+- Views price breakdown
+
+**Step 2: Booking Details**
+- Enters service address
+- Selects date and time
+- Adds special instructions
+- Applies coupon code (if any)
+
+**Step 3: Review & Confirm**
+- Reviews all booking details
+- Sees final price breakdown:
+  - Base price
+  - Add-ons
+  - Discount (if any)
+  - GST/Tax
+  - Total amount
+- Proceeds to payment
+
+**Step 4: Payment**
+- Selects payment method
+- Enters payment details
+- Completes payment securely
+
+**Step 5: Confirmation**
+- Receives booking confirmation
+- Gets booking number
+- Email confirmation sent
+- SMS confirmation sent
+
+**Step 6: Invoice & Receipt**
+- Download invoice option
+- View in dashboard
+- Email receipt attachment
+
+---
+
+### 6.4 Payment Security
+
+**Security Measures:**
+- PCI DSS compliant payment gateway
+- SSL/TLS encryption
+- No card details stored on server
+- Tokenization for saved cards
+- 3D Secure authentication
+- CVV verification
+- OTP verification for UPI/Net Banking
+- Fraud detection algorithms
+- IP address logging
+- Transaction monitoring
+
+**Compliance:**
+- RBI guidelines compliance
+- GDPR for data protection
+- PCI DSS Level 1 certified gateway
+- Regular security audits
+
+---
+
+### 6.5 Refund Policy & Processing
+
+**Refund Policy:**
+- Cancellation before 24 hours: 100% refund
+- Cancellation 12-24 hours: 50% refund
+- Cancellation less than 12 hours: No refund
+- No-show: No refund
+- Service not satisfactory: Case-by-case basis
+
+**Refund Processing:**
+- Automatic refund initiation
+- 5-7 business days for card refunds
+- Instant refund for UPI/wallets
+- Partial refund support
+- Refund notification via email/SMS
+- Refund status tracking
+
+**Implementation:**
+```javascript
+// Process refund
+const refund = await razorpay.payments.refund(paymentId, {
+  amount: refundAmount * 100, // in paise
+  notes: {
+    reason: "Service cancelled by customer",
+    bookingId: bookingId
+  }
+});
+```
+
+---
+
+## 7. Functional Requirements
+
+### 7.1 User Flows
+
+#### A. New Customer Registration Flow
+Start
+↓
+[Landing Page]
+↓
+Click "Sign Up"
+↓
+[Registration Form]
+
+Enter first name, last name
+Enter email
+Enter phone
+Create password
+Accept terms & conditions
+↓
+Submit Form
+↓
+[Email Verification]
+Verification email sent
+Click verification link
+↓
+[Email Verified]
+↓
+[Automatic Login]
+↓
+[Dashboard - Welcome Screen]
+↓
+End
+
+
+#### B. Booking Flow (Detailed)
+Start
+↓
+[Browse Services] or [Search Service]
+↓
+[View Service Details]
+
+Read description
+Check pricing
+View images
+Read reviews
+↓
+Click "Book Now"
+↓
+[User Logged In?]
+├─ No → [Login/Register] → Continue
+└─ Yes → Continue
+↓
+[Step 1: Service Configuration]
+Select service variant (if any)
+Choose add-ons
+Enter service area (sqft/rooms)
+View calculated price
+↓
+Click "Next"
+↓
+[Step 2: Schedule]
+Select date (calendar view)
+View available time slots
+Select time slot
+Option for recurring booking
+↓
+Click "Next"
+↓
+[Step 3: Address]
+Select saved address OR
+Add new address
+
+Enter address details
+Add landmark
+Save for future
+
+
+Enter special instructions
+↓
+Click "Next"
+↓
+[Step 4: Review & Coupon]
+Review all details
+Apply coupon code
+View price breakdown
+Accept terms of service
+↓
+Click "Proceed to Payment"
+↓
+[Step 5: Payment]
+Select payment method
+Complete payment
+↓
+[Payment Processing]
+├─ Success → Continue
+└─ Failed → [Retry Payment] or [Cancel]
+↓
+[Booking Confirmation]
+Display booking number
+Show confirmation message
+Email sent
+SMS sent
+↓
+[Redirect to Dashboard]
+View booking details
+Download invoice
+Track status
+↓
+End
+
+
+#### C. Staff Assignment Flow (Admin)
+Start
+↓
+[Admin Dashboard]
+↓
+[View New Bookings]
+↓
+Select Booking
+↓
+[View Booking Details]
+
+Service type
+Location
+Date & time
+Customer info
+↓
+Click "Assign Staff"
+↓
+[View Available Staff]
+Filter by:
+
+Skills matching service
+Availability on date
+Location proximity
+Rating
+↓
+[Select Staff Member(s)]
+
+
+Single or multiple staff
+View staff profile
+Check past performance
+↓
+Click "Assign"
+↓
+[Confirmation]
+Update booking status to "Assigned"
+Send notification to staff
+Send notification to customer
+Update staff schedule
+↓
+[Booking Updated]
+↓
+End
+
+
+#### D. Review Submission Flow
+Start
+↓
+[Customer Dashboard]
+↓
+[View Completed Bookings]
+↓
+Select Booking
+↓
+[Check Review Status]
+├─ Already Reviewed → [View Review]
+└─ Not Reviewed → Continue
+↓
+Click "Write Review"
+↓
+[Review Form]
+
+Overall rating (1-5 stars)
+Aspect ratings:
+
+Quality of service
+Punctuality
+Professionalism
+Value for money
+
+
+Write review title
+Write detailed review
+Upload photos (optional)
+↓
+Submit Review
+↓
+[Review Submitted]
+Pending admin approval
+Thank you message
+Loyalty points awarded
+↓
+[Admin Review Moderation]
+├─ Approved → [Published] → [Customer Notified]
+└─ Rejected → [Customer Notified] → 
+
+
+
+
+---
+
+### 7.2 Notification Flow
+[Trigger Event]
+↓
+[Notification Service]
+↓
+[Check User Preferences]
+
+Email enabled?
+SMS enabled?
+Push enabled?
+↓
+[Generate Notification Content]
+Use template
+Insert dynamic data
+↓
+[Multi-Channel Dispatch]
+├─ [Email Service] → AWS SES/SendGrid
+├─ [SMS Service] → Twilio/MSG91
+└─ [In-App Notification] → Database + Real-time
+↓
+[Delivery Status Tracking]
+Mark as sent
+Handle failures
+Retry if needed
+↓
+[User Receives Notification]
+↓
+[Notification Action]
+Click to view details
+Mark as read
+Delete
+↓
+End
+
+
+**Notification Triggers:**
+1. Booking confirmed
+2. Staff assigned
+3. Booking reminder (24hrs, 2hrs before)
+4. Service started
+5. Service completed
+6. Payment received
+7. Review request
+8. Promotional offers
+9. Booking rescheduled
+10. Booking cancelled
+11. Refund processed
+12. New message/enquiry response
+
+---
+
+### 7.3 Payment Flow (Technical)
+[User Initiates Payment]
+↓
+[Backend: Create Payment Order]
+
+Generate order ID
+Calculate amount
+Store in database
+↓
+[Return Order Details to Frontend]
+↓
+[Frontend: Initialize Razorpay]
+Load Razorpay SDK
+Configure options
+Open payment modal
+↓
+[User Selects Payment Method]
+↓
+[User Completes Payment]
+↓
+[Razorpay Processes Payment]
+↓
+[Payment Result]
+├─ Success → Continue
+└─ Failed → [Show Error] → [Retry Option]
+↓
+[Razorpay Callback to Frontend]
+payment_id
+order_id
+signature
+↓
+[Frontend Sends to Backend for Verification]
+↓
+[Backend: Verify Signature]
+├─ Valid → Continue
+└─ Invalid → [Log Fraud Attempt] → [Fail]
+↓
+[Backend: Update Database]
+Update payment status
+Update booking status
+Generate invoice
+↓
+[Send Notifications]
+Email confirmation
+SMS confirmation
+↓
+[Webhook from Razorpay] (Parallel)
+payment.captured
+Verify and update
+↓
+[Return Success Response]
+↓
+[Frontend: Show Success Page]
+Booking confirmation
+Download invoice option
+View booking details
+↓
+End
+
+
+---
+
+### 7.4 Admin Actions Workflow
+
+**Daily Admin Tasks:**
+
+1. **Monitor New Bookings**
+   - Review new booking queue
+   - Assign staff
+   - Confirm bookings
+
+2. **Manage Enquiries**
+   - Respond to new enquiries
+   - Follow up on pending enquiries
+   - Convert enquiries to bookings
+
+3. **Staff Management**
+   - Approve leave requests
+   - Review staff performance
+   - Handle staff issues
+
+4. **Customer Support**
+   - Respond to customer queries
+   - Handle complaints
+   - Process refunds
+
+5. **Content Management**
+   - Approve reviews
+   - Publish blog posts
+   - Update service information
+
+6. **Analytics Review**
+   - Check daily revenue
+   - Monitor booking trends
+   - Review customer feedback
+
+7. **Promotions**
+   - Create/modify coupons
+   - Send promotional notifications
+   - Analyze campaign performance
+
+---
+
+## 8. Non-Functional Requirements
+
+### 8.1 Security
+
+**Authentication & Authorization:**
+- JWT-based authentication with secure token storage
+- Password hashing using Bcrypt (salt rounds: 10)
+- Role-based access control (RBAC)
+- Session management with automatic timeout (24 hours)
+- Multi-factor authentication (optional for admin)
+- Social login with OAuth 2.0
+- Account lockout after 5 failed login attempts
+
+**Data Security:**
+- HTTPS/SSL encryption for all communications
+- Encrypted database connections
+- Sensitive data encryption at rest (AES-256)
+- No plain text passwords
+- Secure API keys and environment variables
+- PCI DSS compliance for payment data
+- Regular security audits
+- GDPR compliance for user data
+
+**API Security:**
+- Rate limiting (100 requests/hour per IP for non-cached requests)
+- CORS configuration
+- Input validation and sanitization
+- SQL injection prevention
+- XSS protection
+- CSRF tokens for state-changing operations
+- API versioning
+- Request signing for critical operations
+
+**Infrastructure Security:**
+- Firewall configuration
+- DDoS protection
+- Regular security patches
+- Intrusion detection system
+- Secure backup storage
+- Access logs monitoring
+- IP whitelisting for admin panel (optional)
+
+---
+
+### 8.2 Data Privacy
+
+**GDPR Compliance:**
+- User consent for data collection
+- Right to access personal data
+- Right to delete account and data
+- Data portability
+- Clear privacy policy
+- Cookie consent banner
+- Data breach notification procedures
+
+**Data Handling:**
+- Minimal data collection principle
+- Data retention policy (bookings: 7 years, logs: 90 days)
+- Anonymize data for analytics
+- Secure data deletion process
+- Regular data audits
+- Staff training on data privacy
+
+**User Control:**
+- Profile privacy settings
+- Notification preferences
+- Data download feature
+- Account deletion option
+- Marketing opt-out
+
+---
+
+### 8.3 Performance
+
+**Response Time Targets:**
+- API response time: < 200ms (average)
+- Page load time: < 2 seconds (first contentful paint)
+- Time to interactive: < 3 seconds
+- Search results: < 500ms
+- Payment processing: < 5 seconds
+
+**Optimization Strategies:**
+- Code splitting and lazy loading
+- Image optimization (WebP format, lazy loading)
+- Minification and compression (Gzip/Brotli)
+- CDN for static assets
+- Database query optimization
+- API response caching
+- Connection pooling
+- Asynchronous processing for heavy tasks
+
+**Performance Monitoring:**
+- Google Lighthouse scores (target: 90+)
+- Core Web Vitals monitoring
+- Server response time monitoring
+- Database query performance tracking
+- Error rate monitoring
+- User session tracking
+
+---
+
+### 8.4 Scalability
+
+**Application Scalability:**
+- Stateless application design
+- Horizontal scaling capability
+- Load balancing across multiple instances
+- Auto-scaling based on traffic
+- Microservices architecture (future consideration)
+
+**Database Scalability:**
+- MongoDB sharding for horizontal scaling
+- Read replicas for read-heavy operations
+- Index optimization
+- Connection pooling (pool size: 10-50)
+- Query optimization
+- Archival strategy for old data
+
+**Traffic Handling:**
+- Support for 10,000+ concurrent users
+- Handle 100,000+ bookings per month
+- 1 million+ API requests per day
+- Graceful degradation under load
+- Queue system for heavy operations
+
+**Resource Planning:**
+- **Phase 1 (0-1K users):** Single server, 2GB RAM, 2 CPU cores
+- **Phase 2 (1K-10K users):** 2-3 instances, load balancer, 4GB RAM each
+- **Phase 3 (10K-100K users):** Auto-scaling, CDN, caching, database replicas
+- **Phase 4 (100K+ users):** Microservices, advanced caching, multiple regions
+
+---
+
+### 8.5 Accessibility (WCAG 2.1 Level AA)
+
+**Visual:**
+- Color contrast ratio minimum 4.5:1
+- Scalable text (up to 200%)
+- Responsive text resize
+- Color-blind friendly palette
+- Alternative color indicators (not color-only)
+
+**Keyboard Navigation:**
+- All interactive elements keyboard accessible
+- Logical tab order
+- Visible focus indicators
+- Keyboard shortcuts for common actions
+- Skip navigation links
+
+**Screen Reader Support:**
+- Semantic HTML structure
+- ARIA labels and roles
+- Alt text for all images
+- Form labels properly associated
+- Error messages announced
+- Dynamic content updates announced
+
+**Implementation:**
+- Use React Aria or Reach UI libraries
+- Regular accessibility testing
+- Automated accessibility testing (axe-core)
+- Manual testing with screen readers
+- Accessibility statement page
+
+---
+
+### 8.6 SEO Optimization
+
+**Technical SEO:**
+- Server-side rendering (SSR) or Static Site Generation (SSG)
+- Semantic HTML structure
+- Clean URLs with proper slugs
+- XML sitemap generation
+- Robots.txt configuration
+- Canonical URLs
+- Structured data (JSON-LD schema)
+- Open Graph tags for social sharing
+- Twitter Card tags
+- Mobile-first indexing optimization
+
+**On-Page SEO:**
+- Unique meta titles (50-60 characters)
+- Compelling meta descriptions (150-160 characters)
+- H1-H6 heading hierarchy
+- Keyword-optimized content
+- Internal linking strategy
+- Image alt tags
+- Page speed optimization
+- Mobile responsiveness
+
+**Content SEO:**
+- Regular blog posts (2-4 per month)
+- Location-based service pages
+- FAQ pages
+- Customer testimonials
+- Service-specific landing pages
+- Long-tail keyword targeting
+
+**Performance for SEO:**
+- Core Web Vitals optimization
+- Largest Contentful Paint (LCP) < 2.5s
+- First Input Delay (FID) < 100ms
+- Cumulative Layout Shift (CLS) < 0.1
+- Mobile page speed score: 90+
+
+**Tracking & Analytics:**
+- Google Analytics 4 integration
+- Google Search Console
+- Conversion tracking
+- Event tracking for user actions
+- Heat maps (optional - Hotjar)
+
+---
+
+### 8.7 Load Handling
+
+**Load Balancing Strategy:**
+- Nginx or AWS ELB for load distribution
+- Round-robin or least connections algorithm
+- Health checks for backend instances
+- Automatic failover
+- Session persistence (sticky sessions if needed)
+
+**Caching Strategy:**
+- Browser caching (Cache-Control headers)
+- CDN caching for static assets
+- Redis caching for dynamic content
+- API response caching
+- Database query caching
+- Cache invalidation strategy
+
+**Rate Limiting:**
+- 100 requests per hour per user for APIs
+- 10 requests per minute for login attempts
+- 50 requests per hour for search
+- Configurable limits per endpoint
+- Graceful error messages
+
+**Peak Load Handling:**
+- Expected peak: 1000 concurrent users
+- Auto-scaling triggers at 70% CPU/memory
+- Queue system for non-critical operations
+- Graceful degradation (disable non-essential features)
+- Load testing before launches
+
+---
+
+### 8.8 Deployment Strategy
+
+**Deployment Options:**
+
+**Option 1: AWS Deployment**
+Frontend:
+
+AWS S3 for React build
+CloudFront CDN
+Route53 for DNS
+
+Backend:
+
+AWS EC2 with Auto Scaling Group
+Application Load Balancer
+ElastiCache for Redis (optional)
+
+Database:
+
+MongoDB Atlas (managed)
+Backup to AWS S3
+
+Storage:
+
+AWS S3 for images/files
+
+Monitoring:
+
+CloudWatch for logs and metrics
+SNS for alerts
+
+
+**Option 2: Vercel + Render (Cost-Effective)**
+Frontend:
+
+Vercel (automatic deployments from Git)
+Built-in CDN
+Custom domain
+
+Backend:
+
+Render (Web Service)
+Auto-deploy from Git
+Health checks and auto-restart
+Environment variables management
+
+Database:
+
+MongoDB Atlas (managed)
+
+Storage:
+
+Cloudinary for images
+
+
+**Option 3: DigitalOcean**
+Frontend:
+
+DigitalOcean App Platform
+Automatic HTTPS
+
+Backend:
+
+DigitalOcean Droplets
+Load Balancer
+
+Database:
+
+MongoDB Atlas or DO Managed Database
+
+Storage:
+
+DigitalOcean Spaces
+
+
+**CI/CD Pipeline:**
+[Developer Commits Code]
+↓
+[Push to GitHub/GitLab]
+↓
+[Trigger CI/CD Pipeline]
+↓
+[Run Tests]
+
+Unit tests
+Integration tests
+Lint checks
+↓
+[Tests Pass?]
+├─ No → [Notify Developer] → [Fix Issues]
+└─ Yes → Continue
+↓
+[Build Application]
+Frontend: React build
+Backend: Install dependencies
+↓
+[Deploy to Staging]
+Test environment
+QA testing
+↓
+[Manual Approval] (for production)
+↓
+[Deploy to Production]
+Zero-downtime deployment
+Health checks
+↓
+[Post-Deployment]
+Run smoke tests
+Monitor metrics
+Notify team
+↓
+[Success] or [Rollback if Issues]
+
+
+**Deployment Tools:**
+- **CI/CD:** GitHub Actions, GitLab CI, CircleCI
+- **Containerization:** Docker (optional)
+- **Orchestration:** Kubernetes (for large scale)
+- **Process Manager:** PM2 for Node.js
+
+**Backup Strategy:**
+- **Database:** Daily automated backups (retained for 30 days)
+- **Files:** Weekly backup to cloud storage
+- **Code:** Version control (Git)
+- **Recovery Time Objective (RTO):** 4 hours
+- **Recovery Point Objective (RPO):** 24 hours
+
+**Monitoring & Alerting:**
+- Uptime monitoring (UptimeRobot, Pingdom)
+- Error tracking (Sentry)
+- Performance monitoring (New Relic, Datadog)
+- Log aggregation (Loggly, ELK Stack)
+- Alert notifications (Email, Slack, SMS)
+
+**Rollback Strategy:**
+- Maintain previous 3 versions
+- One-click rollback capability
+- Database migration rollback scripts
+- Feature flags for gradual rollouts
+
+---
+
+## 9. Admin Panel Features
+
+### 9.1 Dashboard Analytics
+
+**Overview Metrics (Today/This Week/This Month):**
+- Total revenue
+- Number of bookings
+- New customers
+- Pending bookings
+- Active staff
+- Average rating
+- Conversion rate
+- Revenue growth percentage
+
+**Charts & Graphs:**
+- Revenue trend (line chart - last 30 days)
+- Bookings by service type (pie chart)
+- Daily bookings (bar chart)
+- Customer acquisition (area chart)
+- Geographic distribution (map view)
+- Staff utilization (gauge chart)
+- Payment method breakdown (donut chart)
+
+**Quick Stats Cards:**
+- Today's bookings
+- Pending payments
+- Unassigned bookings
+- New enquiries
+- Pending reviews
+- Active coupons
+- Low-performing services
+
+**Recent Activity Feed:**
+- Latest bookings
+- Recent payments
+- New customer registrations
+- Staff check-ins
+- Customer reviews
+- System alerts
+
+---
+
+### 9.2 Service Management
+
+**Service List View:**
+- Search and filter services
+- Sort by popularity, rating, date
+- Quick edit option
+- Bulk actions (activate/deactivate)
+- Service status indicator
+
+**Add/Edit Service:**
+- Service name and slug
+- Category selection
+- Rich text description
+- Short description
+- Features list (bullet points)
+- Inclusions/Exclusions
+- Pricing configuration:
+  - Pricing model (fixed/area-based/hourly)
+  - Base price
+  - Area range pricing tiers
+- Duration estimate
+- Add-ons management
+- Image upload (multiple)
+- Availability settings:
+  - Service areas (pincodes)
+  - Working days
+  - Time slots
+- SEO settings (meta title, description, keywords)
+- Feature/Unfeature service
+- Activate/Deactivate
+
+---
+
+### 9.3 Booking Management
+
+**Booking List:**
+- Comprehensive booking table
+- Filters:
+  - Status (pending, confirmed, completed, cancelled)
+  - Date range
+  - Service type
+  - Customer name/phone
+  - Staff assigned
+- Search by booking number
+- Export to Excel/CSV
+- Bulk status update
+
+**Booking Details View:**
+- Complete booking information
+- Customer details with contact options
+- Service details
+- Scheduled date and time
+- Address with map view
+- Assigned staff
+- Payment information
+- Special instructions
+- Status history timeline
+- Action buttons:
+  - Assign/Reassign staff
+  - Reschedule
+  - Cancel booking
+  - Mark as completed
+  - Send notification
+  - Download invoice
+
+**Staff Assignment:**
+- View available staff
+- Filter by skills, location, availability
+- Staff performance metrics
+- One-click assignment
+- Multi-staff assignment for large jobs
+
+**Booking Calendar:**
+- Month/week/day views
+- Drag-and-drop for rescheduling
+- Color-coded by status
+- Filter by service/staff
+- Click to view details
+
+---
+
+### 9.4 Customer Management
+
+**Customer List:**
+- Searchable customer database
+- Filter by:
+  - Registration date
+  - Total bookings
+  - Total spent
+  - Loyalty tier
+  - Last activity
+- Export customer data
+- Customer segments
+
+**Customer Profile:**
+- Personal information
+- Contact details
+- Addresses
+- Booking history
+- Total spent
+- Loyalty points
+- Reviews given
+- Communication history
+- Activity log
+- Actions:
+  - Send email/SMS
+  - Add notes
+  - Block/Unblock user
+  - Reset password
+  - View as customer (impersonate)
+
+**Customer Analytics:**
+- Customer lifetime value
+- Average order value
+- Booking frequency
+- Preferred services
+- Retention rate
+
+---
+
+### 9.5 Staff Management
+
+**Staff List:**
+- All staff members
+- Filter by department, status, location
+- Performance metrics
+- Quick actions
+
+**Staff Profile:**
+- Personal information
+- Employee ID
+- Department and designation
+- Skills and certifications
+- Documents (verification)
+- Availability schedule
+- Service areas
+- Performance metrics:
+  - Total bookings completed
+  - Average rating
+  - Punctuality score
+  - Customer feedback
+- Leave history
+- Bank details (for payroll)
+- Emergency contact
+
+**Add/Edit Staff:**
+- Personal details form
+- Document upload
+- Skill assignment
+- Availability configuration
+- Service area assignment
+- Compensation details
+
+**Staff Schedule:**
+- Calendar view of staff schedules
+- Assigned bookings
+- Leave periods
+- Availability status
+- Workload distribution
+
+**Leave Management:**
+- Leave requests queue
+- Approve/Reject leaves
+- Leave balance tracking
+- Leave calendar
+
+---
+
+### 9.6 Payment & Financial Management
+
+**Payment Reports:**
+- Total revenue (daily, weekly, monthly, yearly)
+- Payment method breakdown
+- Pending payments
+- Failed transactions
+- Refund history
+- Export financial reports
+
+**Transaction List:**
+- All payment transactions
+- Filter by status, method, date
+- Search by transaction ID
+- View payment details
+- Process refunds
+- Download invoices
+
+**Revenue Analytics:**
+- Revenue trends graph
+- Service-wise revenue
+- Customer segment revenue
+- Geographic revenue distribution
+- Average transaction value
+
+**Refund Management:**
+- Refund requests queue
+- Process refunds
+- Partial refund support
+- Refund status tracking
+- Refund reports
+
+---
+
+### 9.7 Enquiry Management
+
+**Enquiry Queue:**
+- All enquiries list
+- Filter by status, date, priority
+- Assign to team members
+- Mark as spam/duplicate
+
+**Enquiry Details:**
+- Contact information
+- Service interest
+- Message
+- Source (website, mobile, referral)
+- Response history
+- Status (new, contacted, qualified, converted, closed)
+- Convert to booking option
+- Follow-up reminders
+
+**Response Management:**
+- Quick response templates
+- Email/SMS integration
+- Response tracking
+- Auto-response setup
+
+---
+
+### 9.8 Coupon & Promotions
+
+**Coupon List:**
+- Active/Inactive coupons
+- Expiring soon alerts
+- Usage statistics
+- Quick enable/disable
+
+**Create/Edit Coupon:**
+- Coupon code
+- Description
+- Discount type (percentage/flat)
+- Discount value
+- Min order value
+- Max discount cap
+- Applicable services
+- Usage limits (total and per user)
+- Validity period
+- Target audience
+- Terms and conditions
+
+**Promotion Campaigns:**
+- Campaign name
+- Campaign duration
+- Target customer segment
+- Notification channels
+- Campaign performance tracking
+
+---
+
+### 9.9 Content Management
+
+**Blog Management:**
+- Blog post list
+- Create/Edit/Delete posts
+- Rich text editor
+- Image upload
+- Category and tags
+- Publish/Schedule/Draft
+- SEO fields
+- Preview option
+
+**Gallery Management:**
+- Upload before/after images
+- Categorize by service
+- Approve/Reject submissions
+- Feature images
+- Reorder gallery
+
+**FAQ Management:**
+- Add/Edit/Delete FAQs
+- Categorize questions
+- Reorder FAQs
+- Search functionality
+
+**Testimonial Management:**
+- Approve/Reject testimonials
+- Feature testimonials
+- Edit/Delete
+- Display order
+
+---
+
+### 9.10 System Settings
+
+**General Settings:**
+- Company name and logo
+- Contact information
+- Business hours
+- Service areas
+- Tax configuration
+- Currency settings
+- Language settings
+
+**Email Templates:**
+- Booking confirmation
+- Payment receipt
+- Booking reminder
+- Cancellation confirmation
+- Review request
+- Welcome email
+- Password reset
+- Customize templates
+
+**SMS Templates:**
+- Booking confirmation
+- Booking reminder
+- OTP messages
+- Payment confirmation
+
+**Payment Gateway Configuration:**
+- Razorpay API keys
+- Stripe configuration
+- Test/Live mode toggle
+- Webhook URLs
+
+**Notification Settings:**
+- Email server (SMTP) configuration
+- SMS gateway configuration
+- Push notification setup
+- Notification frequency limits
+
+**Backup & Maintenance:**
+- Database backup schedule
+- Download backups
+- Restore from backup
+- Maintenance mode toggle
+- System health check
+
+---
+
+### 9.11 Reports & Analytics
+
+**Pre-built Reports:**
+- Revenue report (daily, weekly, monthly, yearly)
+- Booking report (status-wise, service-wise)
+- Customer acquisition report
+- Staff performance report
+- Service popularity report
+- Geographic distribution report
+- Payment method report
+- Coupon usage report
+- Customer retention report
+
+**Custom Report Builder:**
+- Select metrics
+- Choose date range
+- Apply filters
+- Export options (PDF, Excel, CSV)
+- Schedule automated reports
+
+**Data Export:**
+- Export customers
+- Export bookings
+- Export transactions
+- Export reviews
+- Custom data export
+
+---
+
+## 10. User Panel Features
+
+### 10.1 User Dashboard
+
+**Overview Section:**
+- Welcome message with user name
+- Quick stats:
+  - Upcoming bookings count
+  - Total bookings
+  - Loyalty points
+  - Total spent
+- Quick action buttons:
+  - Book new service
+  - View bookings
+  - Contact support
+
+**Upcoming Bookings Widget:**
+- Next 3 upcoming bookings
+- Service name, date, time
+- Status indicator
+- Quick actions (reschedule, cancel, view details)
+
+**Recent Bookings:**
+- Last 5 completed bookings
+- Quick review option
+- Rebook option
+
+**Loyalty Points:**
+- Current points balance
+- Points history
+- Redeem options
+- Earn more suggestions
+
+---
+
+### 10.2 Profile Management
+
+**Personal Information:**
+- Edit name
+- Update phone (with verification)
+- Update email (with verification)
+- Upload profile picture
+- Change password
+
+**Address Book:**
+- List of saved addresses
+- Add new address
+- Edit/Delete address
+- Set default address
+- Address type labels (Home, Office, Other)
+
+**Preferences:**
+- Language preference
+- Theme (Light/Dark)
+- Notification preferences:
+  - Email notifications
+  - SMS notifications
+  - Push notifications
+- Communication preferences
+
+---
+
+### 10.3 Booking Management
+
+**My Bookings:**
+- All bookings list
+- Tabs: Upcoming, Completed, Cancelled
+- Search bookings
+- Filter by service, date, status
+
+**Booking Details:**
+- Service information
+- Date and time
+- Address
+- Assigned staff (name, photo, rating)
+- Price breakdown
+- Payment status
+- Booking status with timeline
+- Special instructions
+
+**Booking Actions:**
+- Reschedule (if eligible)
+- Cancel booking (with policy)
+- Contact support
+- Download invoice
+- Track status
+- Add to calendar
+
+---
+
+### 10.4 Invoice Management
+
+**Invoice List:**
+- All paid bookings
+- Invoice number
+- Date
+- Amount
+- Download option
+
+**Invoice Details:**
+- Company details
+- Customer details
+- Service details
+- Price breakdown
+- GST/Tax details
+- Payment method
+- Transaction ID
+- Download PDF
+- Email invoice
+
+---
+
+### 10.5 Service Status Tracking
+
+**Status Timeline:**
+- Booking confirmed
+- Staff assigned
+- On the way (future GPS integration)
+- Service started
+- Service completed
+- Review submitted
+
+**Real-time Updates:**
+- Status change notifications
+- Estimated arrival time (future)
+- Staff contact information
+- Live chat option (future)
+
+---
+
+### 10.6 Communication
+
+**Contact Support:**
+- Support ticket system
+- Live chat (future)
+- Call/Email/WhatsApp options
+- FAQ link
+- Knowledge base
+
+**Notifications Center:**
+- All notifications list
+- Unread count badge
+- Filter by type
+- Mark as read/unread
+- Clear all
+
+---
+
+### 10.7 Reviews & Feedback
+
+**Submit Review:**
+- After service completion
+- Overall rating (stars)
+- Aspect ratings
+- Written review
+- Photo upload
+- Submit anonymously option
+
+**My Reviews:**
+- All submitted reviews
+- Review status (pending/approved)
+- Edit review (within 24 hours)
+- Admin response view
+
+---
+
+### 10.8 Loyalty & Rewards
+
+**Points Balance:**
+- Current points
+- Points value in currency
+- Expiry information
+
+**Earn Points:**
+- Booking rewards
+- Referral rewards
+- Review rewards
+- Special promotions
+
+**Redeem Points:**
+- Apply to booking
+- Convert to coupon
+- Redemption history
+
+**Referral Program:**
+- Unique referral code/link
+- Share options (WhatsApp, Email, Social)
+- Referral tracking
+- Rewards earned
+
+---
+
+### 10.9 Apply Coupons
+
+**Available Coupons:**
+- View all available coupons
+- Coupon details
+- Terms and conditions
+- Copy coupon code
+- Auto-apply best coupon
+
+**My Coupons:**
+- Saved/earned coupons
+- Expiring soon alerts
+- Apply to booking
+
+---
+
+## 11. API Documentation
+
+### 11.1 API Structure
+
+**Base URL:** `https://api.diamondcleaning.com/api/v1`
+
+**Response Format:**
+```json
+{
+  "success": true,
+  "message": "Operation successful",
+  "data": {},
+  "meta": {
+    "page": 1,
+    "limit": 10,
+    "total": 100,
+    "timestamp": "2025-11-29T10:00:00Z"
+  }
+}
+```
+
+**Error Response:**
+```json
+{
+  "success": false,
+  "message": "Error message",
+  "error": {
+    "code": "ERR_CODE",
+    "details": "Detailed error information"
+  }
+}
+```
+
+---
+
+### 11.2 Authentication Endpoints
+
+#### POST /auth/register
+**Description:** Register a new user
+
+**Request Body:**
+```json
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "john@example.com",
+  "phone": "+919876543210",
+  "password": "SecurePass@123"
+}
+```
+
+**Response (201):**
+```json
+{
+  "success": true,
+  "message": "Registration successful",
+  "data": {
+    "user": {
+      "id": "507f1f77bcf86cd799439011",
+      "firstName": "John",
+      "lastName": "Doe",
+      "email": "john@example.com",
+      "role": "customer"
+    },
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6..."
+  }
+}
+```
+
+#### POST /auth/login
+**Description:** User login
+
+**Request Body:**
+```json
+{
+  "email": "john@example.com",
+  "password": "SecurePass@123"
+}
+```
+
+**Response (200):**
+```json
+{
+  "success": true,
+  "message": "Login successful",
+  "data": {
+    "user": {...},
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6..."
+  }
+}
+```
+
+---
+
+### 11.3 Service Endpoints
+
+#### GET /services
+**Description:** Get all services with filters
+
+**Query Parameters:**
+- `category` (optional): Service category
+- `limit` (optional): Results per page (default: 10)
+- `page` (optional): Page number (default: 1)
+- `sort` (optional): Sort field (e.g., -popularity, price)
+- `search` (optional): Search query
+
+**Response (200):**
+```json
+{
+  "success": true,
+  "message": "Services retrieved successfully",
+  "data": {
+    "services": [{
+      "id": "507f1f77bcf86cd799439011",
+      "serviceName": "Regular House Cleaning",
+      "slug": "regular-house-cleaning",
+      "category": "home",
+      "shortDescription": "Complete home cleaning",
+      "pricing": {
+        "basePrice": 999,
+        "pricingModel": "area-based"
+      },
+      "averageRating": 4.5,
+      "totalReviews": 245,
+      "images": [...]
+    }]
+  },
+  "meta": {
+    "total": 45,
+    "page": 1,
+    "limit": 10,
+    "pages": 5
+  }
+}
+```
+
+#### GET /services/:id
+**Description:** Get service details by ID
+
+**Response (200):**
+```json
+{
+  "success": true,
+  "data": {
+    "service": {
+      "id": "507f1f77bcf86cd799439011",
+      "serviceName": "Regular House Cleaning",
+      "description": "Full description...",
+      "pricing": {...},
+      "features": [...],
+      "inclusions": [...],
+      "addOns": [...]
+    }
+  }
+}
+```
+
+---
+
+### 11.4 Booking Endpoints
+
+#### POST /bookings
+**Description:** Create new booking
+
+**Headers:**
+- `Authorization: Bearer <token>`
+
+**Request Body:**
+```json
+{
+  "services": [{
+    "serviceId": "507f1f77bcf86cd799439011",
+    "quantity": 1,
+    "addOns": ["eco-friendly-products"]
+  }],
+  "serviceAddress": {
+    "addressLine1": "123 Main Street",
+    "city": "Mumbai",
+    "state": "Maharashtra",
+    "pincode": "400001"
+  },
+  "scheduledDate": "2025-12-05",
+  "scheduledTimeSlot": {
+    "startTime": "10:00",
+    "endTime": "12:00"
+  },
+  "specialInstructions": "Please bring eco-friendly products"
+}
+```
+
+**Response (201):**
+```json
+{
+  "success": true,
+  "message": "Booking created successfully",
+  "data": {
+    "booking": {
+      "id": "507f1f77bcf86cd799439012",
+      "bookingNumber": "DHCC-2025-001234",
+      "status": "pending",
+      "scheduledDate": "2025-12-05T10:00:00.000Z",
+      "pricing": {
+        "subtotal": 1499,
+        "discount": 0,
+        "tax": 269.82,
+        "total": 1768.82
+      }
+    }
+  }
+}
+```
+
+#### GET /bookings
+**Description:** Get user bookings
+
+**Headers:**
+- `Authorization: Bearer <token>`
+
+**Query Parameters:**
+- `status` (optional): Filter by status
+- `page`, `limit`: Pagination
+
+**Response (200):**
+```json
+{
+  "success": true,
+  "data": {
+    "bookings": [...]
+  },
+  "meta": {...}
+}
+```
+
+---
+
+### 11.5 Payment Endpoints
+
+#### POST /payments/create-order
+**Description:** Create payment order
+
+**Headers:**
+- `Authorization: Bearer <token>`
+
+**Request Body:**
+```json
+{
+  "bookingId": "507f1f77bcf86cd799439012"
+}
+```
+
+**Response (200):**
+```json
+{
+  "success": true,
+  "data": {
+    "orderId": "order_abc123",
+    "amount": 176882, // in paise
+    "currency": "INR",
+    "key": "rzp_test_xxxxx"
+  }
+}
+```
+
+#### POST /payments/verify
+**Description:** Verify payment
+
+**Headers:**
+- `Authorization: Bearer <token>`
+
+**Request Body:**
+```json
+{
+  "razorpay_order_id": "orderARContinue_abc123",
+"razorpay_payment_id": "pay_xyz789",
+"razorpay_signature": "signature_hash"
+}
+
+**Response (200):**
+```json
+{
+  "success": true,
+  "message": "Payment verified successfully",
+  "data": {
+    "payment": {
+      "id": "507f1f77bcf86cd799439013",
+      "status": "success",
+      "bookingId": "507f1f77bcf86cd799439012"
+    }
+  }
+}
+```
+
+---
+
+### 11.6 Review Endpoints
+
+#### POST /reviews
+**Description:** Submit review
+
+**Headers:**
+- `Authorization: Bearer <token>`
+
+**Request Body:**
+```json
+{
+  "bookingId": "507f1f77bcf86cd799439012",
+  "rating": 5,
+  "title": "Excellent Service",
+  "reviewText": "The cleaning was thorough...",
+  "aspects": {
+    "quality": 5,
+    "punctuality": 5,
+    "professionalism": 5,
+    "valueForMoney": 5
+  }
+}
+```
+
+**Response (201):**
+```json
+{
+  "success": true,
+  "message": "Review submitted successfully",
+  "data": {
+    "review": {
+      "id": "507f1f77bcf86cd799439014",
+      "rating": 5,
+      "isApproved": false
+    }
+  }
+}
+```
+
+---
+
+### 11.7 Admin Endpoints
+
+#### GET /admin/dashboard
+**Description:** Get dashboard analytics
+
+**Headers:**
+- `Authorization: Bearer <token>`
+- Requires: Admin role
+
+**Response (200):**
+```json
+{
+  "success": true,
+  "data": {
+    "metrics": {
+      "totalRevenue": 1250000,
+      "totalBookings": 450,
+      "newCustomers": 85,
+      "averageRating": 4.6
+    },
+    "charts": {
+      "revenueData": [...],
+      "bookingsByService": [...]
+    }
+  }
+}
+```
+
+---
+
+### 11.8 Complete API Endpoint List
+
+**Authentication:**
+- POST `/auth/register`
+- POST `/auth/login`
+- POST `/auth/logout`
+- POST `/auth/refresh-token`
+- POST `/auth/forgot-password`
+- POST `/auth/reset-password/:token`
+- POST `/auth/verify-email/:token`
+- POST `/auth/otp/send`
+- POST `/auth/otp/verify`
+
+**Services:**
+- GET `/services`
+- GET `/services/:id`
+- GET `/services/slug/:slug`
+- GET `/services/category/:category`
+- GET `/services/featured`
+- POST `/services` (Admin)
+- PUT `/services/:id` (Admin)
+- DELETE `/services/:id` (Admin)
+
+**Bookings:**
+- POST `/bookings`
+- GET `/bookings`
+- GET `/bookings/:id`
+- PUT `/bookings/:id`
+- DELETE `/bookings/:id`
+- POST `/bookings/check-availability`
+- GET `/bookings/calendar`
+- POST `/bookings/:id/assign` (Admin)
+- PUT `/bookings/:id/status` (Admin)
+
+**Payments:**
+- POST `/payments/create-order`
+- POST `/payments/verify`
+- GET `/payments/:id`
+- POST `/payments/:id/refund` (Admin)
+- POST `/payments/webhook/razorpay`
+
+**Users:**
+- GET `/users/profile`
+- PUT `/users/profile`
+- PUT `/users/password`
+- POST `/users/addresses`
+- PUT `/users/addresses/:id`
+- DELETE `/users/addresses/:id`
+- GET `/users/notifications`
+- PUT `/users/notifications/:id/read`
+
+**Reviews:**
+- POST `/reviews`
+- GET `/reviews/service/:serviceId`
+- GET `/reviews/booking/:bookingId`
+- PUT `/reviews/:id`
+- POST `/reviews/:id/helpful`
+- POST `/reviews/:id/respond` (Admin)
+
+**Coupons:**
+- GET `/coupons`
+- POST `/coupons/validate`
+- GET `/coupons/:code`
+- POST `/coupons` (Admin)
+- PUT `/coupons/:id` (Admin)
+- DELETE `/coupons/:id` (Admin)
+
+**Enquiries:**
+- POST `/enquiries`
+- GET `/enquiries` (Admin)
+- GET `/enquiries/:id`
+- PUT `/enquiries/:id` (Admin)
+- POST `/enquiries/:id/respond` (Admin)
+
+**Blog:**
+- GET `/blog/posts`
+- GET `/blog/posts/:slug`
+- GET `/blog/posts/category/:category`
+- POST `/blog/posts` (Admin)
+- PUT `/blog/posts/:id` (Admin)
+- DELETE `/blog/posts/:id` (Admin)
+
+**Gallery:**
+- GET `/gallery`
+- GET `/gallery/:id`
+- POST `/gallery` (Admin)
+- PUT `/gallery/:id` (Admin)
+- DELETE `/gallery/:id` (Admin)
+
+**Staff:**
+- GET `/staff/profile`
+- GET `/staff/bookings`
+- PUT `/staff/bookings/:id/status`
+- GET `/staff/schedule`
+- POST `/staff/leaves`
+
+**Admin:**
+- GET `/admin/dashboard`
+- GET `/admin/bookings`
+- GET `/admin/customers`
+- GET `/admin/staff`
+- POST `/admin/staff`
+- PUT `/admin/staff/:id`
+- GET `/admin/enquiries`
+- GET `/admin/reports/revenue`
+- GET `/admin/reports/bookings`
+- POST `/admin/notifications/send`
+
+---
+
+## 12. Testing Plan
+
+### 12.1 Unit Testing
+
+**Backend (Jest + Supertest):**
+- Controllers
+- Services/Utils
+- Middleware
+- Validators
+- Models
+
+**Test Coverage Target:** 80%+
+
+**Example Test Cases:**
+```javascript
+// User registration
+describe('POST /auth/register', () => {
+  test('Should register new user successfully', async () => {
+    const res = await request(app)
+      .post('/api/v1/auth/register')
+      .send({
+        firstName: 'Test',
+        lastName: 'User',
+        email: 'test@example.com',
+        phone: '+919876543210',
+        password: 'Test@123'
+      });
+    
+    expect(res.statusCode).toBe(201);
+    expect(res.body.success).toBe(true);
+    expect(res.body.data.user).toHaveProperty('id');
+  });
+  
+  test('Should fail with duplicate email', async () => {
+    // Test implementation
+  });
+});
+```
+
+---
+
+### 12.2 Integration Testing
+
+**Test Scenarios:**
+- Complete booking flow (service selection to payment)
+- User registration and login flow
+- Staff assignment workflow
+- Payment processing and verification
+- Notification delivery
+- Review submission and approval
+
+**Tools:** Jest, Supertest, MongoDB Memory Server
+
+---
+
+### 12.3 API Testing
+
+**Postman Collections:**
+- Authentication APIs
+- Service APIs
+- Booking APIs
+- Payment APIs
+- Admin APIs
+
+**Test Scenarios:**
+- Success cases
+- Error cases (4xx, 5xx)
+- Authentication failures
+- Authorization failures
+- Validation errors
+- Edge cases
+
+**Automated API Tests:** Newman (Postman CLI)
+
+---
+
+### 12.4 Frontend Testing
+
+**Jest + React Testing Library:**
+- Component unit tests
+- User interaction tests
+- Form validation tests
+- Routing tests
+
+**Example:**
+```javascript
+describe('BookingForm', () => {
+  test('renders booking form', () => {
+    render(<BookingForm />);
+    expect(screen.getByText('Select Service')).toBeInTheDocument();
+  });
+  
+  test('shows validation error on empty submit', async () => {
+    render(<BookingForm />);
+    fireEvent.click(screen.getByText('Continue'));
+    expect(await screen.findByText('Please select a service')).toBeInTheDocument();
+  });
+});
+```
+
+**Coverage Target:** 70%+
+
+---
+
+### 12.5 E2E Testing (Cypress)
+
+**Critical User Journeys:**
+1. **New User Registration → First Booking:**
+   - Visit homepage
+   - Click "Sign Up"
+   - Fill registration form
+   - Verify email (mock)
+   - Browse services
+   - Select service
+   - Complete booking form
+   - Make payment (test mode)
+   - Verify confirmation
+
+2. **Returning User Booking:**
+   - Login
+   - Select service
+   - Use saved address
+   - Apply coupon
+   - Complete booking
+
+3. **Admin Workflow:**
+   - Admin login
+   - View new bookings
+   - Assign staff
+   - View dashboard analytics
+
+**Example:**
+```javascript
+describe('Booking Flow', () => {
+  it('completes booking successfully', () => {
+    cy.visit('/');
+    cy.login('test@example.com', 'password');
+    cy.get('[data-testid="service-card"]').first().click();
+    cy.get('[data-testid="book-now"]').click();
+    cy.fillBookingForm({...});
+    cy.makePayment({...});
+    cy.get('[data-testid="confirmation"]').should('be.visible');
+  });
+});
+```
+
+---
+
+### 12.6 Security Testing
+
+**Test Areas:**
+- SQL Injection attempts
+- XSS attacks
+- CSRF protection
+- Authentication bypass
+- Authorization bypass
+- Rate limiting
+- Input validation
+- File upload security
+- API security
+
+**Tools:** OWASP ZAP, Burp Suite
+
+---
+
+### 12.7 Performance Testing
+
+**Load Testing (Apache JMeter / k6):**
+- Simulate 1000 concurrent users
+- Test API response times
+- Database query performance
+- Payment gateway integration
+- File upload/download
+
+**Stress Testing:**
+- Find breaking points
+- Test auto-scaling
+- Recovery time
+
+**Performance Metrics:**
+- Response time < 200ms (95th percentile)
+- Throughput: 1000 requests/sec
+- Error rate < 0.1%
+
+---
+
+### 12.8 Accessibility Testing
+
+**Tools:**
+- axe DevTools
+- WAVE
+- Lighthouse Accessibility Audit
+- Screen reader testing (NVDA, JAWS)
+
+**Test Cases:**
+- Keyboard navigation
+- Color contrast
+- ARIA labels
+- Form accessibility
+- Image alt text
+- Focus management
+
+---
+
+### 12.9 Browser & Device Testing
+
+**Browsers:**
+- Chrome (latest, latest-1)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+- Mobile browsers (iOS Safari, Chrome Android)
+
+**Devices:**
+- Desktop (1920x1080, 1366x768)
+- Tablet (iPad, Android tablets)
+- Mobile (iPhone, Android phones)
+
+**Tools:** BrowserStack, LambdaTest
+
+---
+
+### 12.10 Testing Schedule
+
+**Development Phase:**
+- Unit tests: Continuous (with each feature)
+- Integration tests: Weekly
+- Code reviews: Before each merge
+
+**Pre-Release Phase:**
+- Full regression testing
+- Performance testing
+- Security audit
+- Accessibility audit
+- Cross-browser testing
+
+**Post-Release:**
+- Smoke tests
+- Monitoring alerts
+- User acceptance testing (UAT)
+- Bug fixes and patches
+
+---
+
+## 13. Project Timeline
+
+### 13.1 Phase-wise Breakdown
+
+**Phase 1: Planning & Design (Week 1-2)**
+- Requirements gathering ✓
+- Database schema design ✓
+- API documentation ✓
+- UI/UX wireframes
+- High-fidelity mockups
+- Design system creation
+- Technical architecture finalization
+
+**Phase 2: Backend Development (Week 3-6)**
+- **Week 3:**
+  - Project setup and configuration
+  - Database connection and models
+  - Authentication system
+  - User management APIs
+  
+- **Week 4:**
+  - Service management APIs
+  - Booking management APIs
+  - Payment integration (Razorpay)
+  
+- **Week 5:**
+  - Review system
+  - Notification system
+  - Coupon management
+  - Blog CMS
+  
+- **Week 6:**
+  - Admin dashboard APIs
+  - Staff management
+  - Analytics and reporting
+  - Testing and bug fixes
+
+**Phase 3: Frontend Development (Week 7-11)**
+- **Week 7:**
+  - Project setup (React, Routing, State management)
+  - Component library setup
+  - Authentication pages (Login, Register)
+  - Home page
+  
+- **Week 8:**
+  - Service pages (List, Detail)
+  - Booking wizard (multi-step form)
+  - User dashboard
+  
+- **Week 9:**
+  - Payment integration
+  - Profile management
+  - Booking management
+  - Review submission
+  
+- **Week 10:**
+  - Admin dashboard
+  - Admin panels (Services, Bookings, Customers)
+  - Staff management interface
+  
+- **Week 11:**
+  - Blog pages
+  - Gallery
+  - About, Contact, FAQ pages
+  - Responsive optimization
+
+**Phase 4: Integration & Testing (Week 12-13)**
+- Frontend-Backend integration
+- End-to-end testing
+- Bug fixes
+- Performance optimization
+- Security audit
+- Accessibility compliance
+
+**Phase 5: Deployment & Launch (Week 14)**
+- Production environment setup
+- Database migration
+- Deployment (Frontend + Backend)
+- SSL certificate installation
+- DNS configuration
+- Final testing on production
+- Soft launch
+- Monitoring setup
+
+**Phase 6: Post-Launch (Week 15-16)**
+- User feedback collection
+- Bug fixes
+- Performance monitoring
+- Documentation updates
+- Training (admin staff)
+- Marketing material preparation
+
+---
+
+### 13.2 Milestones
+
+**Milestone 1 (Week 2):** Design Approval
+- All mockups approved
+- Database schema finalized
+- API documentation complete
+
+**Milestone 2 (Week 6):** Backend Complete
+- All APIs functional
+- Payment integration working
+- API testing complete
+
+**Milestone 3 (Week 11):** Frontend Complete
+- All pages implemented
+- Responsive design verified
+- UI/UX polished
+
+**Milestone 4 (Week 13):** Testing Complete
+- All tests passing
+- Security audit cleared
+- Performance benchmarks met
+
+**Milestone 5 (Week 14):** Production Launch
+- Live website
+- Monitoring active
+- Support team ready
+
+---
+
+### 13.3 Sprint Plan (Agile - 2-week sprints)
+
+**Sprint 1 (Week 1-2): Planning & Setup**
+- Design system
+- Database design
+- Project setup
+
+**Sprint 2 (Week 3-4): Core Backend**
+- Authentication
+- User management
+- Service management
+- Booking system foundation
+
+**Sprint 3 (Week 5-6): Backend Features**
+- Payment integration
+- Notifications
+- Reviews
+- Admin APIs
+
+**Sprint 4 (Week 7-8): Core Frontend**
+- Authentication pages
+- Home page
+- Service pages
+- Booking wizard
+
+**Sprint 5 (Week 9-10): Frontend Features**
+- User dashboard
+- Admin dashboard
+- Payment integration
+- Profile management
+
+**Sprint 6 (Week 11-12): Completion & Polish**
+- Remaining pages
+- Integration
+- Testing
+- Bug fixes
+
+**Sprint 7 (Week 13-14): Launch**
+- Final testing
+- Deployment
+- Launch
+- Monitoring
+
+---
+
+### 13.4 Resource Allocation
+
+**Team Composition:**
+- **Backend Developer (1-2):** Node.js, Express, MongoDB
+- **Frontend Developer (2):** React, UI/UX implementation
+- **Full-stack Developer (1):** Integration, DevOps
+- **UI/UX Designer (1):** Design system, mockups
+- **QA Engineer (1):** Testing, quality assurance
+- **Project Manager (1):** Coordination, planning
+
+**Total Estimated Time:** 14-16 weeks (3.5-4 months)
+
+---
+
+## 14. Future Enhancements
+
+### 14.1 Mobile App (React Native)
+
+**Features:**
+- Native iOS and Android apps
+- Push notifications
+- Biometric authentication
+- GPS tracking for staff
+- Offline booking queue
+- QR code scanning for bookings
+- In-app chat
+
+**Timeline:** 3-4 months post-launch
+
+---
+
+### 14.2 Membership Plans
+
+**Tiered Membership:**
+- **Silver:** 10% discount, priority booking
+- **Gold:** 15% discount, free cancellations, priority support
+- **Platinum:** 20% discount, dedicated staff, monthly free deep clean
+
+**Features:**
+- Monthly/Annual subscriptions
+- Auto-renewal
+- Member dashboard
+- Exclusive offers
+
+---
+
+### 14.3 GPS Live Tracking
+
+**Features:**
+- Real-time staff location tracking
+- ETA updates for customers
+- Route optimization
+- Geo-fencing for service areas
+- Attendance tracking for staff
+
+**Integration:** Google Maps API, Socket.io
+
+---
+
+### 14.4 Subscription Cleaning Plans
+
+**Recurring Services:**
+- Weekly cleaning
+- Bi-weekly cleaning
+- Monthly deep cleaning
+- Custom schedules
+
+**Features:**
+- Automated booking creation
+- Flexible scheduling
+- Pause/Resume subscriptions
+- Discount pricing for subscribers
+
+---
+
+### 14.5 AI Chatbot Integration
+
+**Capabilities:**
+- Answer FAQs
+- Help with booking
+- Service recommendations
+- Check booking status
+- Handle simple enquiries
+
+**Platforms:**
+- Website widget
+- WhatsApp Business API
+- Facebook Messenger
+
+**Technology:** Dialogflow, OpenAI API
+
+---
+
+### 14.6 IoT Integration
+
+**Smart Home Integration:**
+- Schedule cleaning when home is empty
+- Integration with smart locks
+- Temperature/humidity monitoring
+- Before/after photo verification
+
+---
+
+### 14.7 Video Consultation
+
+**Features:**
+- Pre-booking video consultation
+- Virtual service estimation
+- Training videos for DIY tips
+- Video testimonials
+
+---
+
+### 14.8 Marketplace Model
+
+**Expansion:**
+- Multiple vendor support
+- Independent cleaner registration
+- Commission-based model
+- Quality certification
+- Rating-based ranking
+
+---
+
+### 14.9 Analytics & BI Dashboard
+
+**Advanced Analytics:**
+- Predictive analytics for demand
+- Customer churn prediction
+- Revenue forecasting
+- Staff performance insights
+- Market trend analysis
+
+**Tools:** Tableau, Power BI integration
+
+---
+
+### 14.10 Environmental Impact Tracking
+
+**Sustainability Features:**
+- Carbon footprint calculation
+- Eco-friendly product usage tracking
+- Water consumption monitoring
+- Green certification badges
+- Sustainability reports for corporate clients
+
+---
+
+## 15. Conclusion & Next Steps
+
+### 15.1 Project Summary
+
+Diamond House Cleaning Company's web platform will be a comprehensive, modern solution built on the MERN stack, featuring:
+
+- **50+ API endpoints** for complete functionality
+- **15+ user-facing pages** with responsive design
+- **Advanced booking system** with multi-step wizard
+- **Integrated payment gateway** supporting all major Indian payment methods
+- **Role-based dashboards** for customers, staff, and administrators
+- **Real-time notifications** via email, SMS, and in-app
+- **Comprehensive admin panel** for complete business management
+- **Scalable architecture** supporting growth from startup to enterprise
+
+---
+
+### 15.2 Success Metrics
+
+**Technical Metrics:**
+- Page load time < 2 seconds
+- API response time < 200ms
+- 99.9% uptime
+- Zero critical security vulnerabilities
+
+**Business Metrics:**
+- 40% increase in bookings (6 months)
+- 4.5+ average customer rating
+- 60% reduction in manual admin work
+- 30% customer retention improvement
+
+---
+
+### 15.3 Next Steps
+
+1. **Approval & Sign-off:** Review and approve this PRD
+2. **Team Assembly:** Recruit/assign development team
+3. **Environment Setup:** Development, staging, production
+4. **Sprint 1 Kickoff:** Begin with planning and design phase
+5. **Regular Reviews:** Weekly progress meetings
+6. **Stakeholder Updates:** Bi-weekly status reports
+
+---
+
+### 15.4 Support & Maintenance
+
+**Post-Launch Support:**
+- 24/7 monitoring
+- Bug fix SLA: Critical (4 hours), High (24 hours), Medium (3 days)
+- Monthly feature updates
+- Quarterly security audits
+- Performance optimization
+- Regular backups
+
+---
+
+### 15.5 Documentation Deliverables
+
+1. **Technical Documentation:**
+   - API documentation (Swagger)
+   - Database schema diagrams
+   - Architecture diagrams
+   - Deployment guides
+
+2. **User Documentation:**
+   - User manual (Customer)
+   - Admin manual
+   - Staff manual
+   - Video tutorials
+
+3. **Developer Documentation:**
+   - Setup guide
+   - Coding standards
+   - Git workflow
+   - Testing guidelines
+
+---
+
+**Document Version:** 1.0  
+**Last Updated:** November 29, 2025  
+**Prepared By:** Product Development Team  
+**Status:** Ready for Development
+
+---
+
+**End of PRD**
+
+This comprehensive Product Requirement Document provides a complete roadmap for developing the Diamond House Cleaning Company platform. The MERN stack implementation will deliver a modern, scalable, and feature-rich solution that positions the company as a technology leader in the cleaning services industry.
