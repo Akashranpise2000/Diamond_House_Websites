@@ -95,7 +95,6 @@ const blogPostSchema = new mongoose.Schema({
 });
 
 // Indexes
-blogPostSchema.index({ slug: 1 });
 blogPostSchema.index({ category: 1, status: 1, publishedAt: -1 });
 blogPostSchema.index({ author: 1 });
 blogPostSchema.index({ tags: 1 });

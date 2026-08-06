@@ -22,11 +22,11 @@ const generateRefreshToken = (userId) => {
 // @access  Public
 const register = async (req, res) => {
   try {
-    const { firstName, lastName, email, phone, password } = req.body;
+    const { firstName, lastName, email, phone, password, role, preferredTime } = req.body;
 
     // Check if user exists
     const existingUser = await User.findOne({
-      $or: [{ email }, { phone }]
+      $or: [{ email: email.toLowerCase() }, { phone }]
     });
 
     if (existingUser) {
@@ -42,16 +42,17 @@ const register = async (req, res) => {
       lastName,
       email,
       phone,
-      password
+      password,
+      role: role || 'customer',
+      preferredTime
     });
 
     // Generate tokens
     const token = generateToken(user._id);
     const refreshToken = generateRefreshToken(user._id);
 
-    // Update last login
-    user.lastLogin = new Date();
-    await user.save();
+    // Update last login without triggering pre-save middleware
+    await User.findByIdAndUpdate(user._id, { lastLogin: new Date() });
 
     logger.info(`New user registered: ${user.email}`);
 
@@ -86,22 +87,77 @@ const register = async (req, res) => {
 // @access  Public
 const login = async (req, res) => {
   try {
-    const { identifier, password } = req.body; // identifier can be email or phone
+    const { identifier, password, role } = req.body; // identifier can be email or phone
+    logger.info(`Login attempt for identifier: ${identifier}, role: ${role || 'any'}`);
 
     // Check for user
     const user = await User.findByEmailOrPhone(identifier).select('+password');
+    logger.info(`User found: ${user ? user.email : 'No user found'}`);
 
-    if (!user || !(await user.comparePassword(password))) {
+    if (!user) {
+      logger.warn(`User not found for identifier: ${identifier}`);
       return res.status(401).json({
         success: false,
         message: 'Invalid credentials'
       });
     }
 
+    // Check password
+    const isPasswordValid = await user.comparePassword(password);
+    if (!isPasswordValid) {
+      logger.warn(`Invalid password for identifier: ${identifier}`);
+
+      // Increment failed login attempts
+      const failedAttempts = (user.failedLoginAttempts || 0) + 1;
+      const updateData = {
+        $inc: { failedLoginAttempts: 1 },
+        lastFailedLogin: new Date()
+      };
+
+      // Lock account after 5 failed attempts for 30 minutes
+      if (failedAttempts >= 5) {
+        updateData.accountLockedUntil = new Date(Date.now() + 30 * 60 * 1000); // 30 minutes
+        logger.warn(`Account locked for user ${user.email} due to ${failedAttempts} failed attempts`);
+      }
+
+      await User.findByIdAndUpdate(user._id, updateData);
+
+      return res.status(401).json({
+        success: false,
+        message: failedAttempts >= 5 ? 'Account locked due to multiple failed attempts. Try again in 30 minutes.' : 'Invalid credentials'
+      });
+    }
+
+    // Reset failed login attempts on successful login
+    await User.findByIdAndUpdate(user._id, {
+      $unset: { failedLoginAttempts: 1, lastFailedLogin: 1, accountLockedUntil: 1 }
+    });
+
+    // Check if account is active
     if (!user.isActive) {
+      logger.warn(`Attempt to login with deactivated account: ${user.email}`);
       return res.status(401).json({
         success: false,
         message: 'Account is deactivated'
+      });
+    }
+
+    // Check if account is locked
+    if (user.accountLockedUntil && user.accountLockedUntil > new Date()) {
+      logger.warn(`Attempt to login with locked account: ${user.email}`);
+      const remainingTime = Math.ceil((user.accountLockedUntil - new Date()) / 1000 / 60); // minutes
+      return res.status(423).json({
+        success: false,
+        message: `Account is temporarily locked. Try again in ${remainingTime} minutes.`
+      });
+    }
+
+    // Role-based access control (optional - frontend can specify expected role)
+    if (role && user.role !== role) {
+      logger.warn(`Role mismatch for user ${user.email}: expected ${role}, got ${user.role}`);
+      return res.status(403).json({
+        success: false,
+        message: 'Access denied for this role'
       });
     }
 
@@ -109,9 +165,8 @@ const login = async (req, res) => {
     const token = generateToken(user._id);
     const refreshToken = generateRefreshToken(user._id);
 
-    // Update last login
-    user.lastLogin = new Date();
-    await user.save();
+    // Update last login without triggering pre-save middleware
+    await User.findByIdAndUpdate(user._id, { lastLogin: new Date() });
 
     logger.info(`User logged in: ${user.email}`);
 

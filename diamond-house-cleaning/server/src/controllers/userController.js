@@ -1,29 +1,20 @@
-const User = require('../models/User');
-const { logger } = require('../middleware/loggerMiddleware');
+const UserService = require('../services/userService');
 
 // @desc    Get user profile
 // @route   GET /api/v1/users/profile
 // @access  Private
 const getProfile = async (req, res) => {
   try {
-    const user = await User.findById(req.user._id).select('-password');
-
-    if (!user) {
-      return res.status(404).json({
-        success: false,
-        message: 'User not found'
-      });
-    }
+    const user = await UserService.getProfile(req.user._id);
 
     res.status(200).json({
       success: true,
       data: user
     });
   } catch (error) {
-    logger.error('Get profile error:', error);
     res.status(500).json({
       success: false,
-      message: 'Failed to get profile',
+      message: error.message || 'Failed to get profile',
       error: process.env.NODE_ENV === 'development' ? error.message : undefined
     });
   }
@@ -34,46 +25,7 @@ const getProfile = async (req, res) => {
 // @access  Private
 const updateProfile = async (req, res) => {
   try {
-    const { firstName, lastName, email, phone, profileImage } = req.body;
-
-    // Check if email is already taken by another user
-    if (email && email !== req.user.email) {
-      const existingUser = await User.findOne({ email });
-      if (existingUser) {
-        return res.status(400).json({
-          success: false,
-          message: 'Email already in use'
-        });
-      }
-    }
-
-    // Check if phone is already taken by another user
-    if (phone && phone !== req.user.phone) {
-      const existingUser = await User.findOne({ phone });
-      if (existingUser) {
-        return res.status(400).json({
-          success: false,
-          message: 'Phone number already in use'
-        });
-      }
-    }
-
-    const updatedUser = await User.findByIdAndUpdate(
-      req.user._id,
-      {
-        firstName,
-        lastName,
-        email,
-        phone,
-        profileImage
-      },
-      {
-        new: true,
-        runValidators: true
-      }
-    ).select('-password');
-
-    logger.info(`User profile updated: ${updatedUser.email}`);
+    const updatedUser = await UserService.updateProfile(req.user._id, req.body);
 
     res.status(200).json({
       success: true,
@@ -81,10 +33,9 @@ const updateProfile = async (req, res) => {
       data: updatedUser
     });
   } catch (error) {
-    logger.error('Update profile error:', error);
-    res.status(500).json({
+    res.status(400).json({
       success: false,
-      message: 'Failed to update profile',
+      message: error.message || 'Failed to update profile',
       error: process.env.NODE_ENV === 'development' ? error.message : undefined
     });
   }
@@ -95,33 +46,19 @@ const updateProfile = async (req, res) => {
 // @access  Private/Admin
 const getUsers = async (req, res) => {
   try {
-    const page = parseInt(req.query.page) || 1;
-    const limit = parseInt(req.query.limit) || 10;
-    const skip = (page - 1) * limit;
-
-    const users = await User.find({})
-      .select('-password')
-      .sort({ createdAt: -1 })
-      .skip(skip)
-      .limit(limit);
-
-    const total = await User.countDocuments();
+    const result = await UserService.getUsers(req.query.page, req.query.limit);
 
     res.status(200).json({
       success: true,
-      data: users,
-      pagination: {
-        page,
-        limit,
-        total,
-        pages: Math.ceil(total / limit)
+      data: {
+        users: result.users,
+        pagination: result.pagination
       }
     });
   } catch (error) {
-    logger.error('Get users error:', error);
     res.status(500).json({
       success: false,
-      message: 'Failed to get users',
+      message: error.message || 'Failed to get users',
       error: process.env.NODE_ENV === 'development' ? error.message : undefined
     });
   }
@@ -132,24 +69,16 @@ const getUsers = async (req, res) => {
 // @access  Private/Admin
 const getUser = async (req, res) => {
   try {
-    const user = await User.findById(req.params.id).select('-password');
-
-    if (!user) {
-      return res.status(404).json({
-        success: false,
-        message: 'User not found'
-      });
-    }
+    const user = await UserService.getUser(req.params.id);
 
     res.status(200).json({
       success: true,
       data: user
     });
   } catch (error) {
-    logger.error('Get user error:', error);
-    res.status(500).json({
+    res.status(404).json({
       success: false,
-      message: 'Failed to get user',
+      message: error.message || 'User not found',
       error: process.env.NODE_ENV === 'development' ? error.message : undefined
     });
   }
@@ -160,32 +89,7 @@ const getUser = async (req, res) => {
 // @access  Private/Admin
 const updateUser = async (req, res) => {
   try {
-    const { firstName, lastName, email, phone, role, isActive } = req.body;
-
-    const updatedUser = await User.findByIdAndUpdate(
-      req.params.id,
-      {
-        firstName,
-        lastName,
-        email,
-        phone,
-        role,
-        isActive
-      },
-      {
-        new: true,
-        runValidators: true
-      }
-    ).select('-password');
-
-    if (!updatedUser) {
-      return res.status(404).json({
-        success: false,
-        message: 'User not found'
-      });
-    }
-
-    logger.info(`User updated by admin: ${updatedUser.email}`);
+    const updatedUser = await UserService.updateUser(req.params.id, req.body, req.user._id);
 
     res.status(200).json({
       success: true,
@@ -193,10 +97,9 @@ const updateUser = async (req, res) => {
       data: updatedUser
     });
   } catch (error) {
-    logger.error('Update user error:', error);
-    res.status(500).json({
+    res.status(400).json({
       success: false,
-      message: 'Failed to update user',
+      message: error.message || 'Failed to update user',
       error: process.env.NODE_ENV === 'development' ? error.message : undefined
     });
   }
@@ -207,36 +110,16 @@ const updateUser = async (req, res) => {
 // @access  Private/Admin
 const deleteUser = async (req, res) => {
   try {
-    const user = await User.findById(req.params.id);
-
-    if (!user) {
-      return res.status(404).json({
-        success: false,
-        message: 'User not found'
-      });
-    }
-
-    // Prevent admin from deleting themselves
-    if (user._id.toString() === req.user._id.toString()) {
-      return res.status(400).json({
-        success: false,
-        message: 'Cannot delete your own account'
-      });
-    }
-
-    await User.findByIdAndDelete(req.params.id);
-
-    logger.info(`User deleted by admin: ${user.email}`);
+    await UserService.deleteUser(req.params.id, req.user._id);
 
     res.status(200).json({
       success: true,
       message: 'User deleted successfully'
     });
   } catch (error) {
-    logger.error('Delete user error:', error);
-    res.status(500).json({
+    res.status(400).json({
       success: false,
-      message: 'Failed to delete user',
+      message: error.message || 'Failed to delete user',
       error: process.env.NODE_ENV === 'development' ? error.message : undefined
     });
   }

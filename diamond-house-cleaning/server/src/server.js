@@ -1,7 +1,16 @@
 require('dotenv').config();
-const app = require('./app');
 const mongoose = require('mongoose');
+const app = require('./app');
+const { connectDB, disconnectDB } = require('./config/database');
 const winston = require('winston');
+const fs = require('fs');
+const path = require('path');
+
+// Create logs directory if it doesn't exist
+const logsDir = path.join(__dirname, '../logs');
+if (!fs.existsSync(logsDir)) {
+  fs.mkdirSync(logsDir, { recursive: true });
+}
 
 // Configure winston logger
 const logger = winston.createLogger({
@@ -13,8 +22,8 @@ const logger = winston.createLogger({
   ),
   defaultMeta: { service: 'diamond-house-cleaning-api' },
   transports: [
-    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
-    new winston.transports.File({ filename: 'logs/combined.log' }),
+    new winston.transports.File({ filename: path.join(logsDir, 'error.log'), level: 'error' }),
+    new winston.transports.File({ filename: path.join(logsDir, 'combined.log') }),
   ],
 });
 
@@ -28,17 +37,16 @@ if (process.env.NODE_ENV !== 'production') {
 global.logger = logger;
 
 const PORT = process.env.PORT || 5000;
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/diamond-house-cleaning';
 
 // Connect to MongoDB
-mongoose.connect(MONGODB_URI)
-.then(() => {
-  logger.info('Connected to MongoDB');
-})
-.catch((error) => {
-  logger.error('MongoDB connection error:', error);
-  process.exit(1);
-});
+connectDB()
+  .then(() => {
+    // Database connection successful - continue with server startup
+  })
+  .catch((error) => {
+    logger.error('Failed to connect to database:', error);
+    process.exit(1);
+  });
 
 // Handle unhandled promise rejections
 process.on('unhandledRejection', (err, promise) => {
@@ -61,21 +69,27 @@ const server = app.listen(PORT, () => {
 // Graceful shutdown
 process.on('SIGTERM', () => {
   logger.info('SIGTERM received, shutting down gracefully');
-  server.close(() => {
-    mongoose.connection.close(false, () => {
-      logger.info('MongoDB connection closed');
+  server.close(async () => {
+    try {
+      await disconnectDB();
       process.exit(0);
-    });
+    } catch (error) {
+      logger.error('Error during graceful shutdown:', error);
+      process.exit(1);
+    }
   });
 });
 
 process.on('SIGINT', () => {
   logger.info('SIGINT received, shutting down gracefully');
-  server.close(() => {
-    mongoose.connection.close(false, () => {
-      logger.info('MongoDB connection closed');
+  server.close(async () => {
+    try {
+      await disconnectDB();
       process.exit(0);
-    });
+    } catch (error) {
+      logger.error('Error during graceful shutdown:', error);
+      process.exit(1);
+    }
   });
 });
 

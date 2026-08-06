@@ -22,7 +22,7 @@ const userSchema = new mongoose.Schema({
     lowercase: true,
     validate: {
       validator: function(email) {
-        return /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(email);
+        return /\S+@\S+\.\S+/.test(email);
       },
       message: 'Please enter a valid email'
     }
@@ -41,12 +41,12 @@ const userSchema = new mongoose.Schema({
   password: {
     type: String,
     required: [true, 'Password is required'],
-    minlength: [6, 'Password must be at least 6 characters'],
+    minlength: [8, 'Password must be at least 8 characters'],
     select: false // Don't include password in queries by default
   },
   role: {
     type: String,
-    enum: ['customer', 'admin', 'staff'],
+    enum: ['customer', 'admin'],
     default: 'customer'
   },
   isActive: {
@@ -58,6 +58,46 @@ const userSchema = new mongoose.Schema({
   },
   profileImage: {
     type: String
+  },
+  addresses: [{
+    type: {
+      type: String,
+      enum: ['home', 'work', 'other'],
+      default: 'home'
+    },
+    street: {
+      type: String,
+      required: true
+    },
+    city: {
+      type: String,
+      required: true
+    },
+    state: {
+      type: String,
+      required: true
+    },
+    zipCode: {
+      type: String,
+      required: true
+    },
+    country: {
+      type: String,
+      default: 'India'
+    },
+    isDefault: {
+      type: Boolean,
+      default: false
+    },
+    coordinates: {
+      latitude: Number,
+      longitude: Number
+    }
+  }],
+  loyaltyPoints: {
+    type: Number,
+    default: 0,
+    min: [0, 'Loyalty points cannot be negative']
   },
   isEmailVerified: {
     type: Boolean,
@@ -72,7 +112,17 @@ const userSchema = new mongoose.Schema({
   emailVerificationToken: String,
   emailVerificationExpire: Date,
   otp: String,
-  otpExpire: Date
+  otpExpire: Date,
+  failedLoginAttempts: {
+    type: Number,
+    default: 0,
+    min: [0, 'Failed login attempts cannot be negative']
+  },
+  lastFailedLogin: Date,
+  accountLockedUntil: Date,
+  preferredTime: {
+    type: String
+  }
 }, {
   timestamps: true,
   toJSON: { virtuals: true },
@@ -88,21 +138,29 @@ userSchema.virtual('fullName').get(function() {
 });
 
 // Pre-save middleware to hash password
-userSchema.pre('save', async function(next) {
-  if (!this.isModified('password')) return next();
+userSchema.pre('save', async function() {
+  // Only hash the password if it has been modified (or is new)
+  if (!this.isModified('password')) {
+    return;
+  }
 
   try {
+    // Hash password with cost of 12
     const salt = await bcrypt.genSalt(12);
     this.password = await bcrypt.hash(this.password, salt);
-    next();
   } catch (error) {
-    next(error);
+    throw error;
   }
 });
 
 // Instance method to compare password
 userSchema.methods.comparePassword = async function(candidatePassword) {
-  return await bcrypt.compare(candidatePassword, this.password);
+  try {
+    return await bcrypt.compare(candidatePassword, this.password);
+  } catch (error) {
+    console.error('Password comparison error:', error);
+    return false;
+  }
 };
 
 // Static method to find user by email or phone

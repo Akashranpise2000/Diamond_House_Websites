@@ -12,6 +12,7 @@ const {
   deleteService
 } = require('../controllers/serviceController');
 const { protect, authorize } = require('../middleware/authMiddleware');
+const { handleValidationErrors } = require('../middleware/validationMiddleware');
 
 const router = express.Router();
 
@@ -59,8 +60,8 @@ const serviceValidation = [
 ];
 
 // Admin only routes
-router.post('/', protect, authorize('admin'), serviceValidation, createService);
-router.put('/:id', protect, authorize('admin'), serviceValidation, updateService);
+router.post('/', protect, authorize('admin'), serviceValidation, handleValidationErrors, createService);
+router.put('/:id', protect, authorize('admin'), serviceValidation, handleValidationErrors, updateService);
 router.delete('/:id', protect, authorize('admin'), deleteService);
 
 module.exports = router;

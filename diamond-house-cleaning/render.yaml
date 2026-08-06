@@ -1,0 +1,50 @@
+# Render Blueprint Configuration for Diamond House Cleaning
+# This file defines both frontend and backend services for Render deployment
+
+services:
+  # Backend API Service
+  - type: web
+    name: diamond-house-cleaning-api
+    env: node
+    region: oregon
+    rootDirectory: server
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5000
+      - key: MONGODB_URI
+        sync: false # Set this in Render dashboard
+      - key: JWT_SECRET
+        sync: false # Set this in Render dashboard - generate a secure random string
+      - key: JWT_REFRESH_SECRET
+        sync: false # Set this in Render dashboard - generate a secure random string
+      - key: JWT_EXPIRE
+        value: 24h
+      - key: JWT_REFRESH_EXPIRE
+        value: 7d
+      - key: CLIENT_URL
+        sync: false # Set to your frontend URL in Render dashboard
+      - key: FRONTEND_URL
+        sync: false # Set to your frontend URL in Render dashboard
+    autoDeploy: true
+    healthCheckPath: /api/v1/health
+
+  # Frontend Web Service
+  - type: web
+    name: diamond-house-cleaning-frontend
+    env: static
+    region: oregon
+    rootDirectory: client
+    buildCommand: npm run build
+    staticPublishDir: build
+    envVars:
+      - key: REACT_APP_API_URL
+        value: https://diamond-house-cleaning-api.onrender.com/api/v1
+      - key: REACT_APP_ENABLE_ANALYTICS
+        value: "false"
+      - key: REACT_APP_ENABLE_LIVE_CHAT
+        value: "false"
+    autoDeploy: true

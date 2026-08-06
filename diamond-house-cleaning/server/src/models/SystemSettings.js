@@ -1,40 +1,157 @@
 const mongoose = require('mongoose');
 
 const systemSettingsSchema = new mongoose.Schema({
-  key: {
+  // General settings
+  siteName: {
     type: String,
-    required: [true, 'Setting key is required'],
-    unique: true,
-    lowercase: true,
+    default: 'Diamond House Cleaning Services',
     trim: true
   },
-  value: mongoose.Schema.Types.Mixed,
-  type: {
+  siteDescription: {
     type: String,
-    enum: ['string', 'number', 'boolean', 'object', 'array'],
-    required: [true, 'Setting type is required']
+    default: 'Professional cleaning services for your home and office',
+    trim: true
   },
-  category: {
+  contactEmail: {
     type: String,
-    required: [true, 'Category is required'],
-    enum: ['general', 'payment', 'notification', 'booking', 'pricing', 'security', 'maintenance']
+    default: 'info@diamondhousecleaning.com',
+    trim: true,
+    lowercase: true
   },
-  description: String,
-  isPublic: {
+  contactPhone: {
+    type: String,
+    default: '+91-9850781897',
+    trim: true
+  },
+  businessHours: {
+    monday: {
+      open: { type: String, default: '09:00' },
+      close: { type: String, default: '18:00' },
+      closed: { type: Boolean, default: false }
+    },
+    tuesday: {
+      open: { type: String, default: '09:00' },
+      close: { type: String, default: '18:00' },
+      closed: { type: Boolean, default: false }
+    },
+    wednesday: {
+      open: { type: String, default: '09:00' },
+      close: { type: String, default: '18:00' },
+      closed: { type: Boolean, default: false }
+    },
+    thursday: {
+      open: { type: String, default: '09:00' },
+      close: { type: String, default: '18:00' },
+      closed: { type: Boolean, default: false }
+    },
+    friday: {
+      open: { type: String, default: '09:00' },
+      close: { type: String, default: '18:00' },
+      closed: { type: Boolean, default: false }
+    },
+    saturday: {
+      open: { type: String, default: '09:00' },
+      close: { type: String, default: '16:00' },
+      closed: { type: Boolean, default: false }
+    },
+    sunday: {
+      open: { type: String, default: '00:00' },
+      close: { type: String, default: '00:00' },
+      closed: { type: Boolean, default: true }
+    }
+  },
+  socialLinks: {
+    facebook: { type: String, default: '', trim: true },
+    instagram: { type: String, default: '', trim: true },
+    twitter: { type: String, default: '', trim: true },
+    linkedin: { type: String, default: '', trim: true }
+  },
+
+  // Maintenance settings
+  maintenanceMode: {
     type: Boolean,
     default: false
   },
-  isEditable: {
+  maintenanceMessage: {
+    type: String,
+    default: 'We are currently under maintenance. Please check back later.',
+    trim: true
+  },
+  estimatedMaintenanceEnd: {
+    type: Date
+  },
+
+  // Other settings
+  currency: {
+    type: String,
+    default: 'INR',
+    trim: true
+  },
+  timezone: {
+    type: String,
+    default: 'Asia/Kolkata',
+    trim: true
+  },
+
+  // Booking settings
+  bookingAdvanceNoticeHours: {
+    type: Number,
+    default: 24,
+    min: [1, 'Advance notice must be at least 1 hour']
+  },
+  bookingCancellationHours: {
+    type: Number,
+    default: 2,
+    min: [0, 'Cancellation hours cannot be negative']
+  },
+  bookingRescheduleHours: {
+    type: Number,
+    default: 4,
+    min: [0, 'Reschedule hours cannot be negative']
+  },
+
+  // Pricing settings
+  gstRate: {
+    type: Number,
+    default: 18,
+    min: [0, 'GST rate cannot be negative'],
+    max: [100, 'GST rate cannot exceed 100%']
+  },
+  minimumServiceCharge: {
+    type: Number,
+    default: 500,
+    min: [0, 'Minimum service charge cannot be negative']
+  },
+
+  // Payment settings
+  paymentGateway: {
+    type: String,
+    default: 'razorpay',
+    trim: true
+  },
+
+  // Notification settings
+  emailNotifications: {
     type: Boolean,
     default: true
   },
-  validation: {
-    min: Number,
-    max: Number,
-    pattern: String,
-    enum: [String],
-    required: Boolean
+  smsNotifications: {
+    type: Boolean,
+    default: true
   },
+
+  // Security settings
+  sessionTimeout: {
+    type: Number,
+    default: 24,
+    min: [1, 'Session timeout must be at least 1 hour']
+  },
+  passwordMinLength: {
+    type: Number,
+    default: 6,
+    min: [4, 'Password minimum length must be at least 4']
+  },
+
   updatedBy: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User'
@@ -43,107 +160,23 @@ const systemSettingsSchema = new mongoose.Schema({
   timestamps: true
 });
 
-// Indexes
-systemSettingsSchema.index({ category: 1 });
-systemSettingsSchema.index({ key: 1 });
-
-// Pre-save validation
-systemSettingsSchema.pre('save', function(next) {
-  // Type validation
-  if (this.type === 'number' && typeof this.value !== 'number') {
-    return next(new Error('Value must be a number'));
+// Static method to get settings (ensure single document)
+systemSettingsSchema.statics.getSettings = async function() {
+  let settings = await this.findOne();
+  if (!settings) {
+    settings = await this.create({});
   }
-  if (this.type === 'boolean' && typeof this.value !== 'boolean') {
-    return next(new Error('Value must be a boolean'));
-  }
-  if (this.type === 'string' && typeof this.value !== 'string') {
-    return next(new Error('Value must be a string'));
-  }
-
-  // Range validation
-  if (this.validation && this.type === 'number') {
-    if (this.validation.min !== undefined && this.value < this.validation.min) {
-      return next(new Error(`Value must be at least ${this.validation.min}`));
-    }
-    if (this.validation.max !== undefined && this.value > this.validation.max) {
-      return next(new Error(`Value must be at most ${this.validation.max}`));
-    }
-  }
-
-  next();
-});
-
-// Static method to get setting value
-systemSettingsSchema.statics.getValue = async function(key, defaultValue = null) {
-  const setting = await this.findOne({ key });
-  return setting ? setting.value : defaultValue;
+  return settings;
 };
 
-// Static method to set setting value
-systemSettingsSchema.statics.setValue = async function(key, value, updatedBy = null) {
-  const setting = await this.findOne({ key });
-  if (!setting) {
-    throw new Error(`Setting ${key} not found`);
-  }
-
-  if (!setting.isEditable) {
-    throw new Error(`Setting ${key} is not editable`);
-  }
-
-  setting.value = value;
+// Static method to update settings
+systemSettingsSchema.statics.updateSettings = async function(updates, updatedBy = null) {
+  const settings = await this.getSettings();
+  Object.assign(settings, updates);
   if (updatedBy) {
-    setting.updatedBy = updatedBy;
+    settings.updatedBy = updatedBy;
   }
-
-  return setting.save();
-};
-
-// Static method to get settings by category
-systemSettingsSchema.statics.getByCategory = function(category) {
-  return this.find({ category }).sort({ key: 1 });
-};
-
-// Static method to initialize default settings
-systemSettingsSchema.statics.initializeDefaults = async function() {
-  const defaultSettings = [
-    // General settings
-    { key: 'company_name', value: 'Diamond House Cleaning', type: 'string', category: 'general', description: 'Company name displayed throughout the application' },
-    { key: 'company_email', value: 'info@diamondhousecleaning.com', type: 'string', category: 'general', description: 'Primary company email address' },
-    { key: 'company_phone', value: '+91-XXXXXXXXXX', type: 'string', category: 'general', description: 'Primary company phone number' },
-    { key: 'timezone', value: 'Asia/Kolkata', type: 'string', category: 'general', description: 'Default timezone for the application' },
-
-    // Booking settings
-    { key: 'booking_advance_notice_hours', value: 24, type: 'number', category: 'booking', description: 'Minimum hours notice required for booking' },
-    { key: 'booking_cancellation_hours', value: 2, type: 'number', category: 'booking', description: 'Hours before booking when cancellation is not allowed' },
-    { key: 'booking_reschedule_hours', value: 4, type: 'number', category: 'booking', description: 'Hours before booking when rescheduling is not allowed' },
-
-    // Pricing settings
-    { key: 'gst_rate', value: 18, type: 'number', category: 'pricing', description: 'GST rate percentage' },
-    { key: 'minimum_service_charge', value: 500, type: 'number', category: 'pricing', description: 'Minimum service charge in INR' },
-
-    // Payment settings
-    { key: 'payment_gateway', value: 'razorpay', type: 'string', category: 'payment', description: 'Default payment gateway' },
-    { key: 'currency', value: 'INR', type: 'string', category: 'payment', description: 'Default currency' },
-
-    // Notification settings
-    { key: 'email_notifications', value: true, type: 'boolean', category: 'notification', description: 'Enable email notifications' },
-    { key: 'sms_notifications', value: true, type: 'boolean', category: 'notification', description: 'Enable SMS notifications' },
-
-    // Security settings
-    { key: 'session_timeout', value: 24, type: 'number', category: 'security', description: 'Session timeout in hours' },
-    { key: 'password_min_length', value: 6, type: 'number', category: 'security', description: 'Minimum password length' },
-
-    // Maintenance settings
-    { key: 'maintenance_mode', value: false, type: 'boolean', category: 'maintenance', description: 'Enable maintenance mode' }
-  ];
-
-  for (const setting of defaultSettings) {
-    await this.findOneAndUpdate(
-      { key: setting.key },
-      setting,
-      { upsert: true, new: true }
-    );
-  }
+  return settings.save();
 };
 
 module.exports = mongoose.model('SystemSettings', systemSettingsSchema);

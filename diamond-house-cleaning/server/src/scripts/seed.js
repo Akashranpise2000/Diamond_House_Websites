@@ -1,56 +1,20 @@
-const mongoose = require('mongoose');
+const { connectDB } = require('../config/database');
 const User = require('../models/User');
 const Service = require('../models/Service');
-const Staff = require('../models/Staff');
 const SystemSettings = require('../models/SystemSettings');
 require('dotenv').config();
-
-// Connect to MongoDB
-const connectDB = async () => {
-  try {
-    const conn = await mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/diamond-house-cleaning');
-    console.log(`MongoDB Connected: ${conn.connection.host}`);
-  } catch (error) {
-    console.error('Database connection error:', error);
-    process.exit(1);
-  }
-};
 
 // Seed data
 const seedData = {
   // Admin user
   admin: {
-    firstName: 'Admin',
-    lastName: 'User',
-    email: 'admin@diamondhousecleaning.com',
-    phone: '9876543210',
+    firstName: 'Rahul',
+    lastName: 'Nile',
+    email: 'rahul.nile@gmail.com',
+    phone: '9850781897',
     password: 'Admin@123',
     role: 'admin'
   },
-
-  // Staff users
-  staff: [
-    {
-      firstName: 'Rajesh',
-      lastName: 'Kumar',
-      email: 'rajesh.staff@diamondhousecleaning.com',
-      phone: '9876543211',
-      password: 'Staff@123',
-      role: 'staff',
-      department: 'cleaning',
-      designation: 'Senior Cleaner'
-    },
-    {
-      firstName: 'Priya',
-      lastName: 'Sharma',
-      email: 'priya.staff@diamondhousecleaning.com',
-      phone: '9876543212',
-      password: 'Staff@123',
-      role: 'staff',
-      department: 'cleaning',
-      designation: 'Team Lead'
-    }
-  ],
 
   // Services
   services: [
@@ -191,33 +155,6 @@ const seedUsers = async () => {
       console.log('✓ Admin user created');
     } else {
       console.log('✓ Admin user already exists');
-    }
-
-    // Create staff users
-    for (const staffData of seedData.staff) {
-      const staffExists = await User.findOne({ email: staffData.email });
-      if (!staffExists) {
-        const staffUser = await User.create(staffData);
-
-        // Create staff profile
-        await Staff.create({
-          userId: staffUser._id,
-          employeeId: `EMP${Date.now().toString().slice(-4)}`,
-          department: staffData.department,
-          designation: staffData.designation,
-          joinDate: new Date(),
-          skills: ['General Cleaning', 'Deep Cleaning', 'Bathroom Cleaning'],
-          serviceAreas: ['Mumbai', 'Thane'],
-          availability: {
-            workingDays: [1, 2, 3, 4, 5, 6],
-            workingHours: { startTime: '09:00', endTime: '18:00' }
-          }
-        });
-
-        console.log(`✓ Staff user created: ${staffData.firstName}`);
-      } else {
-        console.log(`✓ Staff user already exists: ${staffData.firstName}`);
-      }
     }
   } catch (error) {
     console.error('Error seeding users:', error);

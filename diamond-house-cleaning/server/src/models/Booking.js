@@ -9,11 +9,11 @@ const bookingSchema = new mongoose.Schema({
   customerId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
-    required: [true, 'Customer ID is required']
+    required: false // Allow anonymous bookings
   },
   services: [{
     serviceId: {
-      type: mongoose.Schema.Types.ObjectId,
+      type: mongoose.Schema.Types.Mixed, // Allow both ObjectId and String for mock data
       ref: 'Service',
       required: true
     },
@@ -51,19 +51,23 @@ const bookingSchema = new mongoose.Schema({
   serviceAddress: {
     street: {
       type: String,
-      required: [true, 'Street address is required']
+      required: [true, 'Street address is required'],
+      minlength: [1, 'Street address is required']
     },
     city: {
       type: String,
-      required: [true, 'City is required']
+      required: [true, 'City is required'],
+      minlength: [1, 'City is required']
     },
     state: {
       type: String,
-      required: [true, 'State is required']
+      required: [true, 'State is required'],
+      minlength: [1, 'State is required']
     },
     zipCode: {
       type: String,
-      required: [true, 'Zip code is required']
+      required: [true, 'Zip code is required'],
+      match: [/^\d{5,6}$/, 'Zip code must be 5-6 digits']
     },
     country: {
       type: String,
@@ -79,7 +83,10 @@ const bookingSchema = new mongoose.Schema({
     required: [true, 'Scheduled date is required'],
     validate: {
       validator: function(date) {
-        return date >= new Date();
+        // Allow dates from today onwards (start of day UTC)
+        const today = new Date();
+        today.setUTCHours(0, 0, 0, 0);
+        return date >= today;
       },
       message: 'Scheduled date cannot be in the past'
     }
@@ -175,7 +182,11 @@ const bookingSchema = new mongoose.Schema({
       enum: ['sent', 'failed', 'pending'],
       default: 'pending'
     }
-  }]
+  }],
+  customFields: {
+    type: mongoose.Schema.Types.Mixed,
+    default: {}
+  }
 }, {
   timestamps: true,
   toJSON: { virtuals: true },
@@ -187,23 +198,7 @@ bookingSchema.index({ customerId: 1, createdAt: -1 });
 bookingSchema.index({ status: 1, scheduledDate: 1 });
 bookingSchema.index({ assignedStaff: 1 });
 
-// Pre-save middleware to generate booking number
-bookingSchema.pre('save', async function(next) {
-  if (this.isNew && !this.bookingNumber) {
-    // Generate booking number: DC + YYYYMMDD + 4-digit sequence
-    const date = new Date();
-    const dateStr = date.toISOString().slice(0, 10).replace(/-/g, '');
-    const count = await mongoose.model('Booking').countDocuments({
-      createdAt: {
-        $gte: new Date(date.getFullYear(), date.getMonth(), date.getDate()),
-        $lt: new Date(date.getFullYear(), date.getMonth(), date.getDate() + 1)
-      }
-    });
-    const sequence = (count + 1).toString().padStart(4, '0');
-    this.bookingNumber = `DC${dateStr}${sequence}`;
-  }
-  next();
-});
+// Note: Booking number generation is now handled in the BookingService.createBooking method
 
 // Virtual for duration (calculated from services)
 bookingSchema.virtual('estimatedDuration').get(function() {

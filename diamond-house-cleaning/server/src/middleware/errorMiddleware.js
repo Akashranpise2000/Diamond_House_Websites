@@ -1,9 +1,20 @@
+const { logger } = require('./loggerMiddleware');
+
 const errorHandler = (err, req, res, next) => {
   let error = { ...err };
   error.message = err.message;
 
-  // Log error
-  console.error(err);
+  // Log error with context
+  logger.error('Application error occurred', {
+    error: err.message,
+    stack: err.stack,
+    method: req.method,
+    url: req.url,
+    ip: req.ip,
+    userId: req.user ? req.user._id : null,
+    userAgent: req.get('User-Agent'),
+    requestId: req.id
+  });
 
   // Mongoose bad ObjectId
   if (err.name === 'CastError') {

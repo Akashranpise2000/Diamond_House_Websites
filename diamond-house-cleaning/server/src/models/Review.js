@@ -86,7 +86,7 @@ reviewSchema.statics.getAverageRating = function(serviceId) {
   return this.aggregate([
     {
       $match: {
-        serviceId: mongoose.Types.ObjectId(serviceId),
+        serviceId: new mongoose.Types.ObjectId(serviceId),
         isPublished: true
       }
     },
